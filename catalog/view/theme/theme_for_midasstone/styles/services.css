@@ -1,0 +1,59 @@
+.services {
+  background-image: url("../images/bg-services.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.services h2 {
+  padding-top: 30px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.us-services {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 40px;
+  margin-bottom: -50px;
+}
+
+.us-services li {
+  flex-basis: 25%;
+  color: #ffffff;
+  line-height: 2;
+}
+
+.bloc-services {
+  width: 215px;
+}
+
+.services-button {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 70px;
+  padding-bottom: 50px;
+}
+
+.services a {
+  display: block;
+  width: 170px;
+  height: 35px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 8px;
+}
+
+.services a:hover {
+  border: 1px solid #ffffff;
+  text-decoration: none;
+}
+@media (max-width: 699px) {
+  .services {
+    display: none;
+  }
+}

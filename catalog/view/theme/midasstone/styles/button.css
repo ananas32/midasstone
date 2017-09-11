@@ -1,0 +1,76 @@
+/* Sprite */
+.radio, .drop li, .slct, .check {
+  background: url(../images/sprite.png) 0 0 no-repeat;
+}
+
+/* Form */
+.customForm {
+  color: #444444;
+  /*width: 320px;*/
+  font-size: 13px;
+  line-height:  1.8;
+}
+
+.customForm input, .customForm textarea {
+  font-size: 13px;
+}
+/* = Переключатели Radio Button */
+.radio {
+  display: block;
+  height: 25px;
+  background-position: 0 -56px;
+  coloR: #444;
+  cursor: pointer;
+  text-indent: 22px;
+  font-size: 13px;
+}
+.radio p {
+  display: inline-block;
+  position: relative;
+  text-indent: 1px;
+  margin-top: 1px;
+  margin-bottom: 11px;
+  padding-top: 4px;
+}
+.radio.active {
+  background-position: 0 -86px;
+}
+
+.radio.error {
+  border-color: #ff0000;
+}
+
+.check input[type=checkbox] {
+  position: absolute;
+  left: -10000px;
+}
+
+.check {
+  background-position: 0 3px;
+  padding-left: 25px;
+  cursor: pointer;
+  position: relative;
+  font-size: 13px;
+}
+
+.check.active {
+  background-position: 0 -27px;
+}
+
+.clear {
+  clear: both;
+  margin-top: -1px;
+  height: 1px;
+}
+.terms-of-use {
+  width: 270px;
+}
+.terms-of-use form{
+  color: #6A6A6A;
+}
+.terms-of-use form a {
+  text-decoration: underline;
+}
+.brend h2, .features h2, .technology h2 {
+  margin-bottom: 0;
+}

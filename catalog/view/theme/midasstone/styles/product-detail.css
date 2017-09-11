@@ -1,0 +1,332 @@
+.product-detail {
+  background-color: white;
+  margin-top: 70px;
+}
+.product-detail h2{
+  padding-left: 20px;
+  padding-top: 40px;
+  padding-bottom: 25px;
+}
+.product-detail-holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #f1f1f1;
+}
+
+.product-preview {
+  width: 540px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+  float: left;
+  border-right: 1px solid #f1f1f1;
+  padding-top: 20px;
+}
+
+
+.some-product {
+  display: block;
+}
+
+
+.product-preview .some-product {
+  width: 100%;
+  height: 180px;
+  float: left;
+  padding: 30px 25px;
+}
+
+.product-preview .some-product img {
+  width: 90px;
+  height: 60px;
+  display: block;
+  box-sizing: border-box;
+
+}
+.product-preview .some-product a {
+  border:  1px solid transparent;
+  display: inline-block;
+  width: 90px !important;
+  padding: 5px 5px;
+  margin-right: 10px;
+  outline: none;
+
+}
+.product-preview .some-product a:hover {
+  border:  1px solid grey;
+  padding: 5px 5px;
+}
+
+.one-click {
+  float: left;
+  border: 1px solid #323232;
+  border-radius: 5px;
+}
+.sale-one-click form {
+  border: none;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.one-click input {
+  float: left;
+  width: 180px;
+  height: 40px;
+  background: none;
+  border: 1px solid #f1f1f1;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.one-click button {
+  background-color: #336633;
+  background-image: url("../images/icon-click.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: none;
+  font-size: 0;
+  width: 40px;
+  height: 40px;
+  float: right;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  outline: none;
+}
+
+.one-click button:hover {
+  cursor: pointer;
+  outline: none;
+}
+/*
+.sale-one-click-form {
+  display: flex;
+}
+.sale-one-click-form form {
+width: 180px;
+  height: 40px;
+  box-sizing: border-box;
+}
+.sale-one-click-form form input {
+  width: 180px;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.sale-one-click-form form button {
+  border: none;
+  box-sizing: border-box;
+  padding: 0 0;
+  margin: 0 0;
+  width: 40px;
+  height: 40px;
+}
+.one-click-b {
+  background-color: green;
+  background-image: url("../images/icon-click.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+}
+*/
+.product-detail-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 587px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.product-detail-bloc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.sale-one-click {
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+}
+
+.sale-one-click h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 20px;
+  padding-left: 10px;
+  font-weight: bold;
+  padding-bottom: 27px;
+}
+
+.sale-one-click p {
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.sale {
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  border-left: 1px solid #f1f1f1;
+}
+
+.sale .available {
+  font-size: 16px;
+  padding-top: 20px;
+  color: black;
+  font-weight: bold;
+  padding-bottom: 27px;
+  margin-left: 5px;
+}
+
+.sale .product-price p {
+  padding-top: 0;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.sale .btnsubmit {
+  width: 245px;
+  height: 40px;
+  background-color: #336633;
+  border: 1px solid #336633;
+  color: #ffffff;
+  margin-left: 15px;
+  margin-top: 21px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: background 0.5s, color 0.5s;
+  transition: background 0.5s, color 0.5s;
+}
+
+.sale .btnsubmit:hover {
+  background-color: #ffffff;
+  color: #336633;
+}
+
+
+.product-detail-bloc1 .art-raiting {
+  margin-left: 20px;
+}
+
+.product-detail-bloc1 label {
+  margin-right: 20px;
+}
+
+.product-text {
+  margin-left: 20px;
+  padding-bottom: 30px;
+}
+
+.product-text p {
+  font-size: 13px;
+  line-height: 1;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.add-service {
+  background-image: url("../images/add-service.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 174px;
+  height: 58px;
+  margin-left: 20px;
+
+}
+
+.product-detail-bloc1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.product-detail-bloc2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-top: 1px solid #f1f1f1;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+
+.product-detail-bloc2 ul {
+  /*-webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  list-style-position: inside;*/
+  margin-right: 20px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+@media (max-width: 952px) {
+  .product-detail-bloc {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .sale {
+    border-left: none;
+  }
+  .product-detail-bloc1 {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .product-detail-bloc2 {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .sale-one-click {
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+  }
+}
+@media (max-width: 888px) {
+  .product-preview {
+    display: none;
+  }
+}
+@media (max-width: 360px) {
+  .product-detail-bloc2 ul{
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1
+  }
+}

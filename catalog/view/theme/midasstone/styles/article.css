@@ -1,0 +1,58 @@
+.article {
+}
+
+.article h1 {
+  margin-bottom: 30px;
+  /*padding-left: 20px;*/
+  padding-right: 20px;
+}
+.article-text {
+  padding-top: 20px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+}
+.article p {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: justify;
+  text-indent: 1.5em;
+}
+
+.article img {
+  width: 100%;
+}
+
+.aricle-img {
+  padding-left: 20px;
+  width: 257px;
+}
+.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.article a {
+  display: block;
+  box-sizing: border-box;
+  width: 200px;
+  height: 30px;
+  background-color: #336633;
+  border: 1px solid #336633;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #ffffff;
+  padding-top: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  -webkit-transition: background 0.5s, color 0.5s;
+  transition: background 0.5s, color 0.5s;
+}
+.article a:hover {
+  background-color: #ffffff;
+  text-decoration: none;
+  color: #336633;
+}

@@ -1,0 +1,207 @@
+.product-category-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 105px;
+
+}
+
+.product-category-header a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  padding: 20px 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.product-grid-catedoriya {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: white;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  margin-top: -80px;
+}
+
+.product-grid-catedoriya .featured-product-menu {
+  border: none;
+}
+
+.product-category-img {
+  width: 280px;
+  height: 200px;
+  display: block;
+}
+
+.filter-price {
+
+}
+
+/* Ширина слайдера */
+#slider {
+  width: 240px;
+}
+
+/* Контейнер слайдера */
+.ui-slider {
+  position: relative;
+}
+
+/* Ползунок */
+.ui-slider .ui-slider-handle {
+  position: absolute;
+  z-index: 2;
+  width: 20px; /* Задаем нужную ширину */
+  height: 20px; /* и высоту */
+  background: #476736;
+  border-radius: 50%;
+  /*background: url("images styles/icon-slide.png") no-repeat; /* картинка изображающая ползунок. Или можно залить цветом, задать бордюр и скругления */
+  cursor: pointer;
+}
+
+.ui-slider .ui-slider-range {
+  position: absolute;
+  z-index: 1;
+  font-size: .7em;
+  display: block;
+  border: 0;
+  overflow: hidden;
+}
+
+/* горизонтальный слайдер (сама полоса по которой бегает ползунок) */
+.ui-slider-horizontal {
+  height: 4px; /* задаем высоту согласно дизайна */
+}
+
+/* позиционируем ползунки */
+.ui-slider-horizontal .ui-slider-handle {
+  top: -8px;
+  margin-left: -6px;
+  outline: none;
+}
+
+.ui-slider-horizontal .ui-slider-range {
+  top: 0;
+  height: 100%;
+  outline: none;
+}
+
+.ui-slider-horizontal .ui-slider-range-min {
+  left: 0;
+}
+
+.ui-slider-horizontal .ui-slider-range-max {
+  right: 0;
+}
+
+/* оформление полосы по которой ходит ползунок */
+.ui-widget-content {
+  border: 1px solid #D4D4D4;
+  background: #ffffff;
+}
+
+/* оформление активного участка (между двумя ползунками) */
+.ui-widget-header {
+  border: 1px solid #D4D4D4;
+  background: #476736;
+  outline: none;
+}
+
+#minCost {
+  width: 120px;
+  height: 38px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid black;
+  margin-right: -10px;
+}
+
+#maxCost {
+  width: 120px;
+  text-align: center;
+  font-weight: bold;
+  height: 38px;
+  border: 1px solid black;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+}
+
+.header-product-sort {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header-product-sort h3 {
+  margin-right: 15px;
+}
+
+.header-product-sort li {
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid grey;
+  margin-right: -5px;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+a.knopka {
+  color: black;
+  text-decoration: none;
+  user-select: none;
+  background: white;
+  padding: 0 10px;
+  font-size: 16px;
+}
+
+a.knopka:hover {
+  background: #b1b1b1;
+  text-decoration: none;
+}
+
+a.knopka:active {
+  background: #b1b1b1);
+}
+
+a.knopka:visited {
+  background: #b1b1b1);
+}
+
+.filtr .product-grid-catedoriya {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background-color: white;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  margin-top: -80px;
+}
+
+.filtr .featured-holder {
+  display: flex;
+  justify-content: flex-start;
+}
+
+@media (max-width: 1125px) {
+  .filtr .featured-holder {
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+  }
+}
+
+@media (max-width: 400px) {
+  .filtr .featured-holder {
+    display: flex;
+    justify-content: center;
+  }
+
+  .header-catalog h1 {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,49 @@
+.about-us-holder {
+  display: flex;
+  background-color: #ffffff;
+  margin-top: 70px;
+  margin-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  padding-right: 15px;
+
+}
+
+.sidebar {
+  width: 283px;
+  flex-shrink: 0;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.sidebar li {
+  line-height: 2;
+}
+
+.sidebar li a {
+  text-decoration: none;
+  color: black;
+}
+
+.sidebar li a:hover {
+  text-decoration: underline;
+  color: #336633;
+}
+
+.sidebar li a .active {
+  color: #336633;
+}
+
+.about-us-content {
+  padding-left: 20px;
+}
+
+.about-us-content h1 {
+  padding-left: 40px;
+}
+
+@media (max-width: 800px) {
+  .about-us-holder {
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,20 @@
+.about-us {
+  background-color: #cccccc;
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.about-us h2 {
+
+}
+.about-us p {
+  padding-right: 20px;
+  font-size: 13px;
+}
+@media (max-width: 640px) {
+  .about-us {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

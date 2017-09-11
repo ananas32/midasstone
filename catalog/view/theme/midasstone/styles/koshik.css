@@ -1,0 +1,271 @@
+.page-body h1 {
+  font-size: 36px;
+  padding-top: 35px;
+  padding-bottom: 20px;
+}
+.koshik {
+  background-color: white;
+  padding-top:11px!important;
+  margin-bottom:50px!important;
+}
+
+.koshik-header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.koshik-header-col {
+  display: flex;
+  justify-content: space-between;
+  width: 440px;
+  position:relative;
+  left:-50px;
+}
+.koshik-holder {
+  display: flex;
+  width: 440px;
+  justify-content: space-around;
+  align-items: center;
+  flex-grow: 1;
+}
+.koshik-header p {
+  font-weight: bold;
+  font-size: 18px;
+
+}
+
+.koshik-product {
+  border: 1px solid #f1f1f1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.koshik-holder .product-price p {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+}
+
+.koshik-name-prod {
+  width: 280px;
+  padding-left: 15px;
+}
+.koshik-product-title {
+  display: flex;
+  align-items: center;
+}
+.koshik-img img {
+  display: block;
+}
+/* input + - */
+.number {
+   position: relative;
+  width: 70px;
+}
+
+.number input {
+  box-sizing: border-box;
+  width: 70px;
+  height: 30px;
+  text-align: center;
+  border: 1px solid #cccccc;;
+  background-color: #cccccc;
+}
+
+.number .plus {
+  background: url("../images/plus.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+   width: 30px;
+  height: 30px;
+  padding: 8px 8px;
+  border: 1px solid #cccccc;;
+  background-color: #cccccc;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+ }
+
+.number .minus {
+  background: url("../images/minus.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+   padding: 8px 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #cccccc;;
+  background-color: #cccccc;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: -30px;
+}
+
+.number span {
+  cursor: pointer;
+}
+.del-prod {
+  display: inline-block;
+  border-radius: 50%;
+  text-indent: -9999px;
+  background: #f1f1f1 url("../images/close-btn.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+}
+.koshik-footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.koshik-footer .product-price p {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+}
+.koshik-footer a {
+  text-decoration: none;
+  color: #000000;
+}
+.koshik-footer .btnsubmit {
+  width: 195px;
+  height: 30px;
+  background-color: #336633;
+  border: 1px solid #336633;
+  color: #ffffff;
+  margin-left: 56px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.5s, color 0.5s;
+}
+
+.koshik-footer .btnsubmit:hover {
+   background-color: #ffffff;
+   color: #336633;
+ }
+
+.koshik-footer .product-price {
+  display: flex;
+  align-items: baseline;
+  padding-right: 55px;
+}
+.koshik-footer .product-price span {
+  padding-right: 10px;
+}
+
+@media (max-width: 641px) {
+  .page-body h2 {
+    padding-left: 20px;
+    font-size: 16px
+  }
+  .koshik-img {
+    display: none;
+     }
+  .koshik-name-prod {
+    width: 120px;
+    padding-left: 10px;
+    font-size: 13px;
+  }
+  .koshik-holder .product-price p {
+    font-size: 14px;
+    font-weight: bold;
+      }
+  .number {
+  width: 0;
+    margin-right: 25px;
+  }
+  .number input {
+    box-sizing: border-box;
+    width: 30px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid #cccccc;;
+    background-color: #cccccc;
+  }
+
+  .number .plus {
+    background: url("../images/plus.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    padding: 8px 8px;
+    border: 1px solid #cccccc;;
+    background-color: #cccccc;
+    position: absolute;
+    top: 40px;
+    right: -30px;
+  }
+
+  .number .minus {
+    background: url("../images/minus.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    padding: 8px 8px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #cccccc;;
+    background-color: #cccccc;
+    position: absolute;
+    top: -30px;
+    left: 0;
+  }
+  .koshik-product {
+        height: 110px;
+      }
+  .koshik-holder .product-price p span {
+    display: none;
+  }
+  .price-pr {
+    margin-left: 20px;
+  }
+  .summa-pr {
+    margin-right: 115px;
+  }
+}
+
+@media (max-width: 370px)
+{
+  .koshik-footer {
+       justify-content: center;
+    flex-wrap: wrap-reverse;
+    padding-top: 20px;
+    padding-bottom: 20px;
+      }
+  .koshik-footer .btnsubmit {
+    margin-left: 5px;
+  }
+  .koshik-header p {
+    font-size: 13px;
+  }
+  .koshik-hed-prod {
+    margin-left: 50px;
+  }
+  .price-pr {
+    margin-left: 65px;
+  }
+  .summa-pr {
+    margin-right: 60px;
+  }
+}
+@media (max-width: 370px)
+{
+   .price-pr {
+    margin-left: 60px;
+  }
+  .summa-pr {
+    margin-right: 40px;
+  }
+}

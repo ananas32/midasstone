@@ -1,0 +1,138 @@
+.baner-img {
+  position: relative;
+  display: inline-block;
+}
+
+.baner-img img {
+  width: 100%;
+}
+
+.logo-big {
+  background-image: url("../images/lobo-big.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: inline-block;
+  width: 301px;
+  height: 204px;
+  top: 10px;
+  left: 430px;
+}
+
+.item1 {
+  position: absolute;
+  display: inline-block;
+  height: 40px;
+  top: 16%;
+  left: 6%;
+  box-sizing: border-box;
+  border: 1px solid #336633;
+  border-radius: 25px;
+}
+
+.baner-img a {
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px transparent;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 9px 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 25px;
+  height: 40px;
+  background-color: #336633;
+  transition: background 0.5s, color 0.5s;
+  outline: none;
+ }
+
+.baner-img a:hover {
+  border: 1px solid #336633;
+  color: #336633;
+  background-color: #ffffff;
+  text-decoration: none;
+  outline: none;
+}
+
+.item2 {
+  position: absolute;
+  display: inline-block;
+  height: 40px;
+  top: 65%;
+  left: 10%;
+  box-sizing: border-box;
+  border: 1px solid #336633;
+  border-radius: 25px;
+ }
+
+.item3 {
+  position: absolute;
+  display: inline-block;
+  height: 40px;
+  top: 70%;
+  left: 45%;
+  box-sizing: border-box;
+  border: 1px solid #336633;
+  border-radius: 25px;
+ }
+
+.item4 {
+  position: absolute;
+  display: inline-block;
+  height: 40px;
+  top: 75%;
+  left: 75%;
+  box-sizing: border-box;
+  border: 1px solid #336633;
+  border-radius: 25px;
+ }
+
+.item5 {
+  position: absolute;
+  display: inline-block;
+  height: 40px;
+  top: 16%;
+  left: 78%;
+  box-sizing: border-box;
+  border: 1px solid #336633;
+  border-radius: 25px;
+}
+
+@media (max-width: 813px) {
+  .baner {
+    display: none;
+  }
+}
+.slick-prev, .slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 110px;
+  height: 110px;
+  padding: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+  z-index: 1;
+}
+.slick-prev:before, .slick-next:before {
+  font-family: 'slick';
+  font-size: 60px;
+  line-height: 1;
+  opacity: .85;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+ }
+.slick-prev::before {
+  content: "→";
+}
+.slick-next::before {
+  content: "←";
+}
