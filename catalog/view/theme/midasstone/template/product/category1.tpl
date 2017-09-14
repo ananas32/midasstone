@@ -465,6 +465,7 @@
 		</div>
 	</div>
 	<!--conten-->
+	<!-- test -->
 </div>
 <script type="text/javascript" src="catalog/view/theme/midasstone/scripts/js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="catalog/view/theme/midasstone/scripts/js/slick/slick.min.js"></script>
