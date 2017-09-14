@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="catalog/view/theme/midasstone/styles/normalize.css">
     <link rel="stylesheet" href="catalog/view/theme/midasstone/scripts/ui/jquery-ui.css">
     <link rel="stylesheet" href="catalog/view/theme/midasstone/styles/styles.css">
+    <!--l;zkjflksjflks-->
   <?php foreach ($styles as $style) { ?>
     <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
   <?php } ?>
