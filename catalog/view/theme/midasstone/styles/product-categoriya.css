@@ -1,10 +1,9 @@
-.product-category-header {
+/*.product-category-header {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 105px;
 }
-
 .header-product p {
   font-size: 24px;
   font-weight: bold;
@@ -21,8 +20,6 @@
 
 .product-grid-catedoriya {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   background-color: white;
   padding-top: 30px;
   padding-bottom: 50px;
@@ -31,6 +28,7 @@
 
 .product-grid-catedoriya .featured-product-menu {
   border: none;
+  min-width: 280px;
 }
 
 .product-category-img {
@@ -42,26 +40,23 @@
 .filter-price {
 
 }
-
-/* Ширина слайдера */
+ 
 #slider {
-  width: 240px;
+  width: 100%;
 }
 
-/* Контейнер слайдера */
 .ui-slider {
   position: relative;
 }
 
-/* Ползунок */
 .ui-slider .ui-slider-handle {
   position: absolute;
   z-index: 2;
-  width: 20px; /* Задаем нужную ширину */
-  height: 20px; /* и высоту */
+  width: 20px; 
+  height: 20px;
   background: #476736;
   border-radius: 50%;
-  /*background: url("images styles/icon-slide.png") no-repeat; /* картинка изображающая ползунок. Или можно залить цветом, задать бордюр и скругления */
+  background: url("images styles/icon-slide.png") no-repeat;
   cursor: pointer;
 }
 
@@ -74,12 +69,12 @@
   overflow: hidden;
 }
 
-/* горизонтальный слайдер (сама полоса по которой бегает ползунок) */
+
 .ui-slider-horizontal {
-  height: 4px; /* задаем высоту согласно дизайна */
+  height: 4px; 
 }
 
-/* позиционируем ползунки */
+
 .ui-slider-horizontal .ui-slider-handle {
   top: -8px;
   margin-left: -6px;
@@ -100,13 +95,11 @@
   right: 0;
 }
 
-/* оформление полосы по которой ходит ползунок */
 .ui-widget-content {
   border: 1px solid #D4D4D4;
   background: #ffffff;
 }
 
-/* оформление активного участка (между двумя ползунками) */
 .ui-widget-header {
   border: 1px solid #D4D4D4;
   background: #476736;
@@ -240,4 +233,4 @@ a.knopka:visited {
     justify-content: center;
       padding-right: 20px;
       }
-  }
+  }*/
