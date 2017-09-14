@@ -1,37 +1,44 @@
 <?php echo $header; ?>
-
-<div class="conteiner">
-  <div class="catalog">
-    <h1>Каталог товаров</h1>
-    <div class="content">
-
+<!--<div class="container">
+  <div class="header-bloc">
+    <h1>Каталог</h1>
+    <div class="catalog-bloc">
       <?php if ($categories) { ?>
-        <?php foreach ($categories as $category) { ?>
-          <div class="cont_block">
-            <a href="<?php echo $category['href']; ?>">
-              <div class="block_img">
-                <img src="<?php echo $category['image']; ?>" alt="<?php echo $category['name']; ?>">
-                <h1><?php echo $category['name']; ?></h1>
+        <?php foreach (array_chunk($categories, ceil(count($categories) / 3)) as $categories) { ?>
+          <div class="catalog-column">
+            <?php foreach ($categories as $category) { ?>
+            <div class="catalog-categiriya">
+              <div class="catalog-img">
+                <img src="<?php echo $category['image']; ?>" alt="<?php echo $category['name']; ?>"/>
+                <a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
               </div>
-            </a>
-            <?php if($category['children']){ ?>
-              <div class="cont_text">
-                <ul>
+              <?php if($category['children']){ ?>
+              <div class="catalog-link">
+                <ul class="list-unstyled">
                   <?php foreach ($category['children'] as $categoryChild) { ?>
                     <li><a href="<?php echo $categoryChild['href']; ?>"><?php echo $categoryChild['name']; ?></a></li>
                   <?php } ?>
                 </ul>
               </div>
-            <?php } ?>
+              <hr>
+              <?php } ?>
+            </div>
+          <?php } ?>
           </div>
         <?php } ?>
       <?php } ?>
-      <?php /*
+    </div>
+  </div>
+</div>-->
+<div class="conteiner">
+  <div class="catalog">
+    <h1>Каталог</h1>
+    <div class="content">
       <div class="cont_block">
         <a href="#"><div class="block_img">
-            <img src="/image/catalog/section/Astore.jpg" alt="">
-            <h1>Astore Valves and Fitting</h1>
-          </div></a>
+          <img src="http://midaswork/image/catalog/section/Astore.jpg" alt="">
+          <h1>Astore Valves and Fitting</h1>
+        </div></a>
         <div class="cont_text">
           <ul>
             <li><a href="#">Компрессионные фитинги производства "Astore Valves and Fittings"</a></li>
@@ -41,9 +48,9 @@
       <!--cont_block-->
       <div class="cont_block">
         <a href="#"><div class="block_img">
-            <img src="/image/catalog/section/Sicce.jpg" alt="">
-            <h1>Оборудование для водоемов и фонтанов SICCE</h1>
-          </div></a>
+          <img src="http://midaswork/image/catalog/section/Sicce.jpg" alt="">
+          <h1>Оборудование для водоемов и фонтанов SICCE</h1>
+        </div></a>
         <div class="cont_text">
           <ul>
             <li><a href="#">Внутренние фильтры для водоемов</a></li>
@@ -58,9 +65,9 @@
       <!--cont_block-->
       <div class="cont_block">
         <a href="#"><div class="block_img">
-            <img src="/image/catalog/section/rain-bird.jpg" alt="">
-            <h1>Системы автоматического полива Rain Bird</h1>
-          </div></a>
+          <img src="http://midaswork/image/catalog/section/rain-bird.jpg" alt="">
+          <h1>Системы автоматического полива Rain Bird</h1>
+        </div></a>
         <div class="cont_text">
           <ul>
             <li><a href="#">Аксессуары и клапаны быстрого доступа</a></li>
@@ -93,9 +100,9 @@
       <!--cont_block-->
       <div class="cont_block">
         <a href="#"><div class="block_img">
-            <img src="/image/catalog/section/shtuchne-pokritie.jpg" alt="">
-            <h1>Искусственное покрытие</h1>
-          </div></a>
+          <img src="http://midaswork/image/catalog/section/shtuchne-pokritie.jpg" alt="">
+          <h1>Искусственное покрытие</h1>
+        </div></a>
         <div class="cont_text">
           <ul>
             <li><a href="#">Газон</a></li>
@@ -105,9 +112,9 @@
       <!--cont_block-->
       <div class="cont_block">
         <a href="#"><div class="block_img">
-            <img src="/image/catalog/section/kamen.jpg" alt="">
-            <h1>Природный камень</h1>
-          </div></a>
+          <img src="http://midaswork/image/catalog/section/kamen.jpg" alt="">
+          <h1>Природный камень</h1>
+        </div></a>
         <div class="cont_text">
           <ul>
             <li><a href="#">Брусчатка</a></li>
@@ -125,9 +132,9 @@
       <!--cont_block-->
       <div class="cont_block">
         <a href="#"><div class="block_img">
-            <img src="/image/catalog/section/irritec.jpg" alt="">
-            <h1>Каталог товаров Irritec</h1>
-          </div></a>
+          <img src="http://midaswork/image/catalog/section/irritec.jpg" alt="">
+          <h1>Каталог товаров Irritec</h1>
+        </div></a>
         <div class="cont_text">
           <ul>
             <li><a href="#">Капельный полив и аксессуары</a></li>
@@ -138,9 +145,9 @@
       <!--cont_block-->
       <div class="cont_block">
         <a href="#"><div class="block_img">
-            <img src="/image/catalog/section/sadovaya-meblya.jpg" alt="">
-            <h1>Садовая мебель и архитектура</h1>
-          </div></a>
+          <img src="http://midaswork/image/catalog/section/sadovaya-meblya.jpg" alt="">
+          <h1>Садовая мебель и архитектура</h1>
+        </div></a>
         <div class="cont_text">
           <ul>
             <li><a href="#">Беседки кованые, альтанки</a></li>
@@ -155,9 +162,9 @@
       <!--cont_block-->
       <div class="cont_block">
         <a href="#"><div class="block_img">
-            <img src="/image/catalog/section/delorativnei-rosteniya.jpg" alt="">
-            <h1>Декоративные растения</h1>
-          </div></a>
+          <img src="http://midaswork/image/catalog/section/delorativnei-rosteniya.jpg" alt="">
+          <h1>Декоративные растения</h1>
+        </div></a>
         <div class="cont_text">
           <ul>
             <li><a href="#">Цветы многолетние</a></li>
@@ -165,12 +172,10 @@
         </div>
       </div>
       <!--cont_block-->
-    */ ?>
     </div>
   </div>
 </div>
-
-<script type="text/javascript" src="/catalog/view/theme/midasstone/scripts/js/jquery-3.1.1.min.js"></script>
-<script type="text/javascript" src="/catalog/view/theme/midasstone/scripts/js/masonry.pkgd.min.js"></script>
-<script type="text/javascript" src="/catalog/view/theme/midasstone/scripts/js/main.js"></script>
+<script type="text/javascript" src="catalog/view/theme/midasstone/scripts/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="catalog/view/theme/midasstone/scripts/js/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="catalog/view/theme/midasstone/scripts/js/main.js"></script>
 <?php echo $footer; ?>

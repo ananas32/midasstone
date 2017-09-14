@@ -26,9 +26,10 @@
   <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link rel="stylesheet" href="catalog/view/theme/theme_for_midasstone/scripts/slick/slick.css">
-  <link rel="stylesheet" href="catalog/view/theme/theme_for_midasstone/scripts/slick/slick-theme.css">
-  <link rel="stylesheet" href="catalog/view/theme/theme_for_midasstone/scripts/slick/slicknav.min.css">
+  <!---->
+  <link rel="stylesheet" type="text/css" href="catalog/view/theme/midasstone/scripts/js/slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="catalog/view/theme/midasstone/scripts/js/slick/slick-theme.css">
+  <!---->
   <link rel="stylesheet" href="catalog/view/theme/theme_for_midasstone/styles/normalize.css">
   <link rel="stylesheet" href="catalog/view/theme/theme_for_midasstone/scripts/ui/jquery-ui.css">
   <link rel="stylesheet" href="catalog/view/theme/theme_for_midasstone/styles/styles.css">
