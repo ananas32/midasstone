@@ -13,7 +13,7 @@
 <meta name="robots" content="noindex,nofollow" />
 <!-- OCFilter End -->
 <?php } ?>
-      
+
   <base href="<?php echo $base; ?>" />
   <meta name="copyright" content="Всі права застережено">
 	<meta http-equiv="content-language" content="ua">
