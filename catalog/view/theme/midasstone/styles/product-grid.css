@@ -333,7 +333,7 @@ justify-content: flex-start;
 
 /*-----------new styles--------*/
 a {
-  display: block;
+  /*display: block;*/
 }
 /*-----top opis-----*/
 .opis_cont {
@@ -378,10 +378,10 @@ a {
   margin-bottom: 8px;
 }
 .sitbar > ul > li > a {
-  color: #000;
-  position: relative;
-  line-height: 17px;
-  transition: 0.5s;
+  /*color: #000;*/
+  /*position: relative;*/
+  /*line-height: 17px;*/
+  /*transition: 0.5s;*/
 }
 .sitbar > ul > li > a:hover {
   text-decoration: none;
@@ -418,8 +418,8 @@ a {
   width: 100%;
 }
 .slid_slick > a {
-  margin-left: 15px;
-  margin-top: 5px;
+  /*margin-left: 15px;*/
+  /*margin-top: 5px;*/
 }
 .slid_slick > h1 {
   margin-left: 15px;
