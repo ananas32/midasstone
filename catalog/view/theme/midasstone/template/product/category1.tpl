@@ -1,4 +1,6 @@
 <?php echo $header; ?>
+<?=$heading_title;?>
+
 <!--<div class="header-catalog">
 	<div class="container">
 		<h1><?php echo $heading_title; ?></h1>
@@ -127,342 +129,95 @@
 
 <!--<link rel="stylesheet" type="text/css" href="catalog/view/theme/midasstone/scripts/js/slick/slick.css">
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/midasstone/scripts/js/slick/slick-theme.css">-->
-<div class="cont">
+<div class="cont container">
 	<div class="conten">
+		<?php if(!empty($category_image) && !empty($category_description)){ ?>
 		<div class="row opis_cont">
 			<div class="hidden-xs col-sm-3 opis_img">
-				<img class="img-responsive" src="https://orig12.deviantart.net/95e9/f/2015/238/c/d/team_kurwa_by_arminius1871-d973rtu.png" alt="">
+				<img class="img-responsive" src="image/<?=$category_image?>" alt="">
 			</div>
 			<div class="hidden-xs col-sm-9 opis_text">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum adipisci optio nihil commodi quisquam amet? Dolorum provident nisi fuga quos, possimus eligendi animi ipsam quas, at obcaecati repudiandae ullam doloribus.
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, consequatur! Perspiciatis doloribus voluptate vero assumenda nisi quisquam, eligendi, enim libero officia. Odit dolorum, tenetur voluptas ad maiores pariatur unde facere.
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem magnam cumque saepe deleniti assumenda ea soluta repellat inventore corrupti odit! Neque officiis illum eius nulla voluptates explicabo repellat, inventore unde.
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, ad, eveniet! Quod officia veniam, voluptas cumque autem dolores, vitae molestias, nesciunt soluta eveniet temporibus laudantium explicabo quisquam facere, qui repudiandae.
+				<?php echo $category_description?>
 			</div>
 		</div>
-		<div class="row">
-			<div class="hidden-xs col-sm-3">
-				<div class="sitbar">
-					<ul>
-						<li><a href="#">Аксессуары и клапаны быстрого доступа</a></li>
-						<li><a href="#">Водные пушки серии Rain Gun</a></li>
-						<li><a href="#">Вращающиеся регулируемые форсунки R-VAN и RN</a></li>
-						<li><a href="#">Выдвижные распылители Rain Bird</a></li>
-						<li><a href="#">Импульсные оросители</a></li>
-						<li><a href="#">Монтажные изделия и аксессуары для распылителей и роторных оросителей</a></li>
-						<li><a href="#">Роторные оросители большой дальности</a></li>
-						<li><a href="#">Трубы капельного орошения с компенсированными капельницами</a></li>
-					</ul>
+		<? } ?>
+		<?php if($categories){ ?>
+			<div class="row">
+				<div class="hidden-xs col-sm-3">
+					<h3><?php $text_category; ?>Подкатегории:</h3>
+					<div class="sitbar">
+						<ul>
+							<?php
+							foreach ($categories as $category){
+								echo '<li><a href="'.$category['href'].'">'.$category['name'].'</a></li>';
+							}
+							?>
+						</ul>
+					</div>
+					<!--sitebar-->
 				</div>
-				<!--sitebar-->
+				<div class="col-xs-12 col-sm-9">
+					<!-- old-->
+					<?php foreach ($categories as $k => $category) { ?>
+						<?php if(!empty($category['children'])){ ?>
+							<div class="featured-products">
+								<div class="header-product">
+									<p><?php echo $category['name']?></p>
+									<div class="nav-slide">
+										<div class="prew"><a href="#" class="prew-b<?php echo $k?$k:''; ?>"> < </a></div>
+										<div class="next"><a href="#" class="next-b<?php echo $k?$k:''; ?>"> > </a></div>
+									</div>
+								</div>
+								<div class="featured-holder">
+									<div class="product-slider<?php echo $k?$k:''; ?> clearfix">
+										<?php foreach( $category['children'] as $child ){ ?>
+										<div class="featured-products-list">
+											<div class="featured-product">
+												<div class="product-category-header"><a href="<?php echo $child['href'] ?>"><?php echo $child['name'] ?></a></div>
+												<div class="product-category-img">
+													<img src="<?php echo $child['image'] ?>" alt="<?php echo $child['name'] ?>"/>
+												</div>
+											</div>
+										</div>
+										<?php } ?>
+									</div>
+								</div>
+							</div>
+						<?php }elseif(!empty($category['product_cat'])){ ?>
+							<div class="contein_conten">
+								<h2><a href="<?=$category['href']?>"><?=$category['name']?></a></h2>
+								<div class="slider_slick">
+									<?php foreach( $category['product_cat'] as $child ){ ?>
+										<div class="slid_slick">
+											<div class="slid_slick_img">
+												<img src="<?=$child['thumb']?>" alt="<?=$child['name']?>">
+											</div>
+											<a href="<?=$child['href']?>"><?=$child['name']?></a>
+											<h1>
+												<?php if($child['price'] == 'Цену уточняйте'): ?>
+												<?php echo $child['price']; ?>
+												<?php else: ?>
+												<?php echo $child['price']; ?>
+												<?php endif; ?>
+											</h1>
+											<p><?=$child['stock_status']?></p>
+											<button type="submit" onclick="cart.add(<?= $child['product_id']?>)">Купить</button>
+										</div>
+									<?php } ?>
+								</div>
+							</div>
+						<?php } ?>
+					<?php } ?>
+					<!-- end old -->
+				</div>
 			</div>
-			<div class="col-xs-12 col-sm-9">
-				<div class="contein_conten">
-					<h2><a href="#">Аксессуары и клапаны быстрого доступа</a></h2>
-					<div class="slider_slick">
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-					</div>
-				</div>
-				<!--cont-->
-				<div class="contein_conten">
-					<h2><a href="#">Аксессуары и клапаны быстрого доступа</a></h2>
-					<div class="slider_slick">
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-					</div>
-				</div>
-				<!--cont-->
-				<div class="contein_conten">
-					<h2><a href="#">Аксессуары и клапаны быстрого доступа</a></h2>
-					<div class="slider_slick">
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-					</div>
-				</div>
-				<!--cont-->
-				<div class="contein_conten">
-					<h2><a href="#">Аксессуары и клапаны быстрого доступа</a></h2>
-					<div class="slider_slick">
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-						<div class="slid_slick">
-							<div class="slid_slick_img">
-								<img src="http://midaswork/image/catalog/section/project-5.jpg" alt="">
-							</div>
-							<a href="#">Аксессуары для ЭМК RAIN BIRD MTT-100</a>
-							<h1>78.00грн.</h1>
-							<p>В наличии</p>
-							<button>Купить</button>
-						</div>
-						<!--slid_slick-->
-					</div>
-				</div>
-				<!--cont-->
-			</div>
-		</div>
+		<?php }else{ ?>
+		<div class="opis_text" style="min-height: 0; margin-bottom: 10px">
+			<p  class="text-center"><?php echo $text_empty; ?></p>
+			<div class="buttons">
+				<div class="text-center"><a href="<?php echo $continue; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
+			</div></div>
+		<?php } ?>
 	</div>
 	<!--conten-->
 	<!-- test -->
