@@ -235,3 +235,8 @@
     <?php echo $cart; ?>
   </div -->
 </div>
+<div>
+  <div id="content" class="col-sm-12">
+
+  </div>
+</div>
