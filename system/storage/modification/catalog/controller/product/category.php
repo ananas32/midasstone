@@ -47,7 +47,7 @@ class ControllerProductCategory extends Controller {
       $filter_ocfilter = '';
     }
 		// OCFilter end
-      
+
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
@@ -111,6 +111,8 @@ class ControllerProductCategory extends Controller {
 
 			if ($category_info['meta_h1']) {
 				$data['heading_title'] = $category_info['meta_h1'];
+                $data['category_image'] = $category_info['image'];
+                $data['category_description'] = $category_info['description'];
 			} else {
 				$data['heading_title'] = $category_info['name'];
 			}
@@ -213,7 +215,7 @@ class ControllerProductCategory extends Controller {
                             'start'              => 1,
                 			'limit'              => 8
             );
-                	 
+
 						$product_cat = $this->getProductCategor($filter_data_new,$url);
                 }
                 $filter_data = array(
@@ -279,7 +281,7 @@ class ControllerProductCategory extends Controller {
   		// OCFilter start
   		$filter_data['filter_ocfilter'] = $filter_ocfilter;
   		// OCFilter end
-      
+
 			$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
 
 			$results = $this->model_catalog_product->getProducts($filter_data);
@@ -325,7 +327,7 @@ class ControllerProductCategory extends Controller {
                 'stock_status'=> $result['stock_status'],
                 'length_class_id'=>$result['length_class_id'],
 					'name'        => $result['name'],
-				
+
 					'price'       => $price,
 					'special'     => $special,
 					'tax'         => $tax,
@@ -342,7 +344,7 @@ class ControllerProductCategory extends Controller {
 				$url .= '&filter_ocfilter=' . $this->request->get['filter_ocfilter'];
 			}
       // OCFilter end
-      
+
 			if (isset($this->request->get['filter'])) {
 				$url .= '&filter=' . $this->request->get['filter'];
 			}
@@ -417,7 +419,7 @@ class ControllerProductCategory extends Controller {
 				$url .= '&filter_ocfilter=' . $this->request->get['filter_ocfilter'];
 			}
       // OCFilter end
-      
+
 			if (isset($this->request->get['filter'])) {
 				$url .= '&filter=' . $this->request->get['filter'];
 			}
@@ -452,7 +454,7 @@ class ControllerProductCategory extends Controller {
 				$url .= '&filter_ocfilter=' . $this->request->get['filter_ocfilter'];
 			}
       // OCFilter end
-      
+
 			if (isset($this->request->get['filter'])) {
 				$url .= '&filter=' . $this->request->get['filter'];
 			}
@@ -571,7 +573,7 @@ class ControllerProductCategory extends Controller {
         }
       }
       // OCFilter End
-      
+
 
 			$data['continue'] = $this->url->link('common/home');
 
@@ -615,7 +617,7 @@ class ControllerProductCategory extends Controller {
 			if (isset($this->request->get['limit'])) {
 				$url .= '&limit=' . $this->request->get['limit'];
 			}
- 
+
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('text_error'),
 				'href' => $this->url->link('product/category', $url)
@@ -654,7 +656,7 @@ class ControllerProductCategory extends Controller {
   		// OCFilter start
   		//$filter_data['filter_ocfilter'] = $filter_ocfilter;
   		// OCFilter end
-      
+
         $product_total = $this->model_catalog_product->getTotalProducts($filter_data);
 
         $results = $this->model_catalog_product->getProducts($filter_data);
@@ -668,7 +670,7 @@ $this->model_tool_image->resize($result['image'],
 	$this->config->get('config_image_product_width'),
 	$this->config->get('config_image_product_height'));
             } else {
-                $image = $this->model_tool_image->resize('placeholder.png', 
+                $image = $this->model_tool_image->resize('placeholder.png',
                 	$this->config->get('config_image_product_width'),
 	$this->config->get('config_image_product_height'));
             }
