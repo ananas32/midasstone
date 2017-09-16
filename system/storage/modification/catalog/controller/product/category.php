@@ -112,7 +112,7 @@ class ControllerProductCategory extends Controller {
 			if ($category_info['meta_h1']) {
 				$data['heading_title'] = $category_info['meta_h1'];
                 $data['category_image'] = $category_info['image'];
-                $data['category_description'] = $category_info['description'];
+                $data['category_description'] = html_entity_decode($category_info['description'], ENT_QUOTES, 'UTF-8');
 			} else {
 				$data['heading_title'] = $category_info['name'];
 			}
