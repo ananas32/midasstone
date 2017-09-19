@@ -1,4 +1,4 @@
-.bottom-menu {
+/*.bottom-menu {
   background-color: #336633;
   margin-top: 25px;
 }
@@ -145,5 +145,117 @@
     width: 200px;
     margin-left: 15px;
 
+  }
+}*/
+.bottom-menu {
+  background-color: #336533;
+  min-height: 60px;
+  margin-top: 30px;
+}
+/*------forma-----*/
+/*input*/
+#search > input {
+  height: 38px;
+}
+/*button*/
+.button_search > button {
+  height: 38px;
+  background-color: #cc9966;
+  background: linear-gradient(to top, #c79f65, #eacb85);
+  border: none;
+  border: 1px solid #DBB877;
+  outline: none;
+  color: #000;
+  transition: 0.2s;
+}
+.button_search > button:hover {
+  background-color: #666633;
+  background: linear-gradient(to top, #eacb85, #c79f65);
+  border: 1px solid #DBB877;
+}
+/*-----catalog-----*/
+.first {
+  width: 100%;
+  background-color: red;
+}
+.menu-tovarov {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 287px;
+  height: 60px;
+  background-color: #6a4a2c;
+}
+
+.menu-tovarov a {
+  padding-left: 20px;
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.menu-tovarov a:hover {
+  text-decoration: underline;
+}
+.line-menu {
+  background-image: url("../images/line-menu.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 18px;
+  display: inline-block;
+  padding-left: 50px;
+}
+/*---corzina-----*/
+.shop-grid a {
+  padding-left: 25px;
+  background-color: transparent;
+  transition: background 0.5s, color 0.5s;
+}
+
+.shop-grid a:hover {
+  text-decoration: none;
+  background-color: #b1b1b1;
+  padding-left: 25px;
+}
+
+.shoping-cart {
+  display: flex;
+  float: right;
+  padding-top: 20px;
+}
+
+.shoping-cart p {
+  color: #ffffff;
+  font-size: 14px;
+  margin-left: 15px;
+  margin-right: 35px;
+}
+
+.header-cart {
+  background-image: url("../images/shoping-cart.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 22px;
+  position: relative;
+}
+
+.header-cart .count {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #ffcc99;
+  border-radius: 50%;
+  line-height: 18px;
+  text-align: center;
+  top: -6px;
+  right: -8px;
+  color: #000000;
+}
+@media screen and (max-width: 872px) {
+  .shoping-cart {
+    float: none;
+    
   }
 }
