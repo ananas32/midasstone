@@ -51,57 +51,65 @@
 </head>
 <body class="<?php echo $class; ?>">
 <div class="header container">
-    <div class="header-logo">
-        <a href="/"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>"
-                         class="img-responsive"/></a>
-        <br><span>Садово-ландшафтный центр</span>
-    </div>
-    <div class="header-container">
-        <div class="header-info">
-            <div class="header-nav">
-                <nav class="nav">
-                    <ul class="list-unstyled">
-                        <li><a href="/oplata">Оплата</a></li>
-                        <li><a href="/delivery">Доставка</a></li>
-                        <li><a href="/garanty-service">Гарантия и сервис</a></li>
-                        <li><a href="/about_us">О нас</a></li>
-                        <li><a href="/contact-us">Контакты</a></li>
-                        <li><a href="/articles">Cтатьи</a></li>
-                        <li><a href="/vse-uslugi">Услуги</a></li>
-                        <li><a href="/index.php?route=gallery/gallery&path=">Наши работы</a></li>
-                    </ul>
-                </nav>
-                <?php  $language; ?>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="header-logo">
+                <a href="/">
+                    <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive"/>
+                </a>
+                <span>Садово-ландшафтный центр</span>
             </div>
         </div>
-        <div class="slogan">
-            <p>Ждем вашего звонка</p>
-        </div>
-        <div class="header-contact">
-
-            <div class="us-phone">
-                <div class="phone-img"></div>
-                <div class="us-phone-number">
-                    <p><?php echo $telephone; ?></p>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="header-info">
+                    <div class="header-nav">
+                        <nav class="nav">
+                            <ul class="list-unstyled">
+                                <li><a href="/oplata">Оплата</a></li>
+                                <li><a href="/delivery">Доставка</a></li>
+                                <li><a href="/garanty-service">Гарантия и сервис</a></li>
+                                <li><a href="/about_us">О нас</a></li>
+                                <li><a href="/contact-us">Контакты</a></li>
+                                <li><a href="/articles">Cтатьи</a></li>
+                                <li><a href="/vse-uslugi">Услуги</a></li>
+                                <li><a href="/index.php?route=gallery/gallery&path=">Наши работы</a></li>
+                            </ul>
+                        </nav>
+                        <?php  $language; ?>
+                    </div>
                 </div>
             </div>
-            <div class="cabinet">
-                <div class="cabinet-img"></div>
-                <div class="text-cabinet">
-                    <?php if (!$logged) { ?>
-                    <a href="<?php echo $register; ?>"><?php echo $text_register; ?></a>
-                    <a href="/my-account/" title="Авторизация">Авторизация</a>
-                    <?php } else { ?>
-                    <a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>"><?php echo $text_account; ?></a>
-                    <a href="/logout/" title="Выход">Выход</a>
-                    <?php } ?>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="us-phone">
+                        <div class="phone-img"></div>
+                        <div class="us-phone-number">
+                            <p style="font-size: 12pt"><?php echo $telephone; ?></p>
+                        </div>
+                        <!--span class="slogan">
+                            <strong>Ждем вашего звонка</strong>
+                        </span-->
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="cabinet">
+                        <div class="cabinet-img"></div>
+                            <?php if (!$logged) { ?>
+                            <a href="<?php echo $register; ?>"><?php echo $text_register; ?></a>
+                            <a href="/my-account/" title="Авторизация">Авторизация</a>
+                            <?php } else { ?>
+                            <a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>"><?php echo $text_account; ?></a>
+                            <a href="/logout/" title="Выход">Выход</a>
+                            <?php } ?>
+                    </div>
                 </div>
             </div>
+
         </div>
-
     </div>
-
 </div>
+
 <div class="bottom-menu">
     <div class="row" style="max-width: 1127px; margin: auto;">
         <div class="col-sm-4">
