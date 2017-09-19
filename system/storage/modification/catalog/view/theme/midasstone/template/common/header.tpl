@@ -89,11 +89,11 @@
                 <div class="cabinet-img"></div>
                 <div class="text-cabinet">
                     <?php if (!$logged) { ?>
-                        <a href="<?php echo $register; ?>"><?php echo $text_register; ?></a>
-                        <a href="/my-account/" title="Авторизация">Авторизация</a>
+                    <a href="<?php echo $register; ?>"><?php echo $text_register; ?></a>
+                    <a href="/my-account/" title="Авторизация">Авторизация</a>
                     <?php } else { ?>
-                        <a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>"><?php echo $text_account; ?></a>
-                        <a href="/logout/" title="Выход">Выход</a>
+                    <a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>"><?php echo $text_account; ?></a>
+                    <a href="/logout/" title="Выход">Выход</a>
                     <?php } ?>
                 </div>
             </div>
@@ -103,8 +103,8 @@
 
 </div>
 <div class="bottom-menu">
-    <div class="row" style="border: 1px solid red; max-width: 1127px; margin: auto;">
-        <div class="col-sm-4" style="border: 1px solid yellow">
+    <div class="row" style="max-width: 1127px; margin: auto;">
+        <div class="col-sm-4">
             <div id="bloc" class="menu-tovarov">
                 <div id="menu_pop">
                     <ul id="accordion">
@@ -113,60 +113,60 @@
                             <ul class="menuLvl1" style=""
                                 onmouseover="document.getElementById('fon-cat').style.display='block';">
                                 <?php foreach ($categories as $category) { ?>
-                                    <?php if ($category['children']) { ?>
-                                        <?php foreach ($category['children'] as $key => $children) { ?>
-                                        <li>
-                                            <a href="<?php echo $children['href']; ?>" class="<?php if ($children['children']) echo 'down-menu'; ?>" data-popup="popup-kat<?php echo $key; ?>"><?php echo $children['name']; ?></a>
-                                        </li>
-                                        <?php } ?>
-                                    <?php }?>
+                                <?php if ($category['children']) { ?>
+                                <?php foreach ($category['children'] as $key => $children) { ?>
+                                <li>
+                                    <a href="<?php echo $children['href']; ?>" class="<?php if ($children['children']) echo 'down-menu'; ?>" data-popup="popup-kat<?php echo $key; ?>"><?php echo $children['name']; ?></a>
+                                </li>
+                                <?php } ?>
+                                <?php }?>
                                 <?php } ?>
                             </ul>
                         </li>
                     </ul>
                 </div>
                 <?php foreach ($categories as $category) { ?>
-                    <?php if ($category['children']) { ?>
-                        <?php foreach ($category['children'] as $key => $children) { ?>
-                            <?php if ($children['children']) { ?>
-                                <div id="popup-kat<?php echo $key;?>" class="popup-katalog">
-                                    <div class="popup-katalog-header">
-                                        <a href="<?php echo $children['href']; ?>"><?php echo $children['name']; ?></a>
-                                        <div class="close-poup-catalog"
-                                             onclick="document.getElementById('popup-kat<?php echo $key;?>').style.display = 'none',
+                <?php if ($category['children']) { ?>
+                <?php foreach ($category['children'] as $key => $children) { ?>
+                <?php if ($children['children']) { ?>
+                <div id="popup-kat<?php echo $key;?>" class="popup-katalog">
+                    <div class="popup-katalog-header">
+                        <a href="<?php echo $children['href']; ?>"><?php echo $children['name']; ?></a>
+                        <div class="close-poup-catalog"
+                             onclick="document.getElementById('popup-kat<?php echo $key;?>').style.display = 'none',
                                            document.getElementById('fon-cat').style.display = 'none',
                                              document.getElementById('accordion > ul').style.display = 'none'"></div>
-                                    </div>
-                                    <div class="popup-katalog-items">
-                                        <div class="popup-katalog-item">
-                                            <?php foreach ($children['children'] as $key => $child2) { ?>
-                                            <ul class="list-unstyled">
-                                                <li><a href="<?php echo $child2['href']; ?>"
-                                                       class="header-list"><?php echo $child2['name'] ?></a></li>
-                                                <?php if($child2['children']){ ?>
-                                                <?php foreach ($child2['children'] as $child3) { ?>
-                                                <li><a href="<?php echo $child3['href']; ?>"><?php echo $child3['name']; ?></a></li>
-                                                <?php } ?>
-                                                <?php } ?>
-                                            </ul>
-                                            <?php } ?>
-                                        </div>
-                                    </div>
-                                    <div class="catalog-list">
-                                        <p><?php echo $text_all; ?> <?php echo $children['name']; ?></p>
-                                        <a href="<?php echo $children['href']; ?>">
-                                            <div class="all-catalog-b"></div>
-                                        </a>
-                                    </div>
-                                </div>
+                    </div>
+                    <div class="popup-katalog-items">
+                        <div class="popup-katalog-item">
+                            <?php foreach ($children['children'] as $key => $child2) { ?>
+                            <ul class="list-unstyled">
+                                <li><a href="<?php echo $child2['href']; ?>"
+                                       class="header-list"><?php echo $child2['name'] ?></a></li>
+                                <?php if($child2['children']){ ?>
+                                <?php foreach ($child2['children'] as $child3) { ?>
+                                <li><a href="<?php echo $child3['href']; ?>"><?php echo $child3['name']; ?></a></li>
+                                <?php } ?>
+                                <?php } ?>
+                            </ul>
                             <?php } ?>
-                        <?php } ?>
-                    <?php }?>
+                        </div>
+                    </div>
+                    <div class="catalog-list">
+                        <p><?php echo $text_all; ?> <?php echo $children['name']; ?></p>
+                        <a href="<?php echo $children['href']; ?>">
+                            <div class="all-catalog-b"></div>
+                        </a>
+                    </div>
+                </div>
+                <?php } ?>
+                <?php } ?>
+                <?php }?>
                 <?php } ?>
             </div>
         </div>
-        <div class="col-sm-5 text-center" style="border: 1px solid skyblue"><?php echo $search; ?></div>
-        <div class="col-sm-3 text-center" style=" border: 1px solid black"><?php echo $cart; ?></div>
+        <div class="col-sm-5 text-center align-middle" style="padding-top: 11px; padding-bottom: 11px;"><?php echo $search; ?></div>
+        <div class="col-sm-3 text-center"><?php echo $cart; ?></div>
     </div>
     <div id="fon-cat" class="fon">
 
