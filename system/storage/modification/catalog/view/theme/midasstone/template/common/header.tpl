@@ -103,8 +103,8 @@
 
 </div>
 <div class="bottom-menu">
-    <div class="row" style="border: 1px solid red; max-width: 1127px; margin: auto;">
-        <div class="col-sm-4" style="border: 1px solid yellow">
+    <div class="row" style="max-width: 1127px; margin: auto;">
+        <div class="col-sm-4">
             <div id="bloc" class="menu-tovarov">
                 <div id="menu_pop">
                     <ul id="accordion">
@@ -165,8 +165,8 @@
                 <?php } ?>
             </div>
         </div>
-        <div class="col-sm-5 text-center" style="border: 1px solid skyblue"><?php echo $search; ?></div>
-        <div class="col-sm-3 text-center" style=" border: 1px solid black"><?php echo $cart; ?></div>
+        <div class="col-sm-5 text-center align-middle" style="padding-top: 11px; padding-bottom: 11px;"><?php echo $search; ?></div>
+        <div class="col-sm-3 text-center"><?php echo $cart; ?></div>
     </div>
     <div id="fon-cat" class="fon">
 
