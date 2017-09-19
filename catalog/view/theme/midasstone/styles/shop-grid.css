@@ -182,9 +182,10 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 287px;
+  max-width: 300px;
   height: 60px;
   background-color: #6a4a2c;
+  margin: auto;
 }
 
 .menu-tovarov a {
@@ -220,6 +221,8 @@
 }
 
 .shoping-cart {
+  max-width: 200px;
+  margin: auto;
   display: flex;
   float: right;
   padding-top: 20px;
