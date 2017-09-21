@@ -1,7 +1,8 @@
 <?php
 class ControllerInformationInformation extends Controller {
 	public function index() {
-		$this->load->language('information/information');
+
+        $this->load->language('information/information');
 
 		$this->load->model('catalog/information');
 
@@ -12,21 +13,24 @@ class ControllerInformationInformation extends Controller {
 			'href' => $this->url->link('common/home')
 		);
 
-		if (isset($this->request->get['information_id'])) {
+        if (isset($this->request->get['information_id'])) {
 			$information_id = (int)$this->request->get['information_id'];
 		} else {
 			$information_id = 0;
 		}
 
-		$information_info = $this->model_catalog_information->getInformation($information_id);
+        $information_info = $this->model_catalog_information->getInformation($information_id);
 
 		if ($information_info) {
 
 			if ($information_info['meta_title']) {
 				$data['heading_title'] = $information_info['meta_title'];
-			} else {
+                $this->document->setTitle($information_info['meta_title']);
+
+            } else {
 				$data['heading_title'] = $information_info['title'];
-			}
+                $this->document->setTitle($information_info['meta_title']);
+            }
 
 			$this->document->setDescription($information_info['meta_description']);
 			$this->document->setKeywords($information_info['meta_keyword']);
@@ -38,9 +42,11 @@ class ControllerInformationInformation extends Controller {
 
 			if ($information_info['meta_h1']) {
 				$data['heading_title'] = $information_info['meta_h1'];
-			} else {
+                $this->document->setTitle($information_info['meta_h1']);
+            } else {
 				$data['heading_title'] = $information_info['title'];
-			}
+                $this->document->setTitle($information_info['meta_title']);
+            }
 
 			$data['button_continue'] = $this->language->get('button_continue');
 
