@@ -34,11 +34,11 @@
               <div class="input-group">
 				<input type="text" name="telephone" value="" placeholder="<?php echo $text_one_click_placeholder; ?>" id="input-payment-telephone" class="form-control">
 				<input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
-                
+
                     <button type="submit" id="button-oneclick" class="btn btn-primary"><div class="one-click-b"></div></button>
-                
+
               </div>
-			  
+
             </div>
           </div>
           <div class="sale">
@@ -212,7 +212,7 @@
         <span>Также с этим товаром покупают:</span>
 
       </div>
-      
+
       <div class="featured-holder">
         <?php foreach($products as $product){  ?>
         <div class="featured-products-list">
@@ -475,8 +475,8 @@
                   <label>
                     <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" />
                     <?php if ($option_value['image']) { ?>
-                    <img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" /> 
-                    <?php } ?>                    
+                    <img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" />
+                    <?php } ?>
                     <?php echo $option_value['name']; ?>
                     <?php if ($option_value['price']) { ?>
                     (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
@@ -496,7 +496,7 @@
                   <label>
                     <input type="checkbox" name="option[<?php echo $option['product_option_id']; ?>][]" value="<?php echo $option_value['product_option_value_id']; ?>" />
                     <?php if ($option_value['image']) { ?>
-                    <img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" /> 
+                    <img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" />
                     <?php } ?>
                     <?php echo $option_value['name']; ?>
                     <?php if ($option_value['price']) { ?>
@@ -584,7 +584,7 @@
             <?php } ?>
           </div>
 
-			
+
           <?php if ($review_status) { ?>
           <div class="rating">
             <p>

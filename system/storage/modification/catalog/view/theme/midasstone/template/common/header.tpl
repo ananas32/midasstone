@@ -24,12 +24,15 @@
     <?php } ?>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
-    <link rel="stylesheet" href="catalog/view/theme/midasstone/scripts/slick/slick.css">
-    <link rel="stylesheet" href="catalog/view/theme/midasstone/scripts/slick/slick-theme.css">
-    <link rel="stylesheet" href="catalog/view/theme/midasstone/scripts/slick/slicknav.min.css">
+
+    <!---->
+    <link rel="stylesheet" href="catalog/view/theme/midasstone/scripts/js/slick/slick.css">
+    <link rel="stylesheet" href="catalog/view/theme/midasstone/scripts/js/slick/slick-theme.css">
+    <!---->
     <link rel="stylesheet" href="catalog/view/theme/midasstone/styles/normalize.css">
     <link rel="stylesheet" href="catalog/view/theme/midasstone/scripts/ui/jquery-ui.css">
     <link rel="stylesheet" href="catalog/view/theme/midasstone/styles/styles.css">
+    <link rel="stylesheet" href="catalog/view/theme/midasstone/styles/font-awesome/css/font-awesome.min.css">
     <?php foreach ($styles as $style) { ?>
     <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>"
           media="<?php echo $style['media']; ?>"/>
@@ -51,50 +54,30 @@
 </head>
 <body class="<?php echo $class; ?>">
 <div class="header container">
-    <div class="row">
-        <div class="col-sm-3">
-            <div class="header-logo">
-                <a href="/">
-                    <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive"/>
-                </a>
-                <span>Садово-ландшафтный центр</span>
-            </div>
+    <div class="header">
+        <div class="header-logo">
+            <a href="/">
+                <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive"/>
+            </a>
+            <!--<span>Садово-ландшафтный центр</span>-->
         </div>
-        <div class="col-sm-9">
-            <div class="row">
-                <div class="header-info">
-                    <div class="header-nav">
-                        <nav class="nav">
-                            <ul class="list-unstyled">
-                                <li><a href="/oplata">Оплата</a></li>
-                                <li><a href="/delivery">Доставка</a></li>
-                                <li><a href="/garanty-service">Гарантия и сервис</a></li>
-                                <li><a href="/about_us">О нас</a></li>
-                                <li><a href="/contact-us">Контакты</a></li>
-                                <li><a href="/articles">Cтатьи</a></li>
-                                <li><a href="/vse-uslugi">Услуги</a></li>
-                                <li><a href="/index.php?route=gallery/gallery&path=">Наши работы</a></li>
-                            </ul>
-                        </nav>
-                        <?php  $language; ?>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-8">
-                    <div class="us-phone">
-                        <div class="phone-img"></div>
-                        <div class="us-phone-number">
-                            <p style="font-size: 12pt"><?php echo $telephone; ?></p>
-                        </div>
-                        <!--span class="slogan">
-                            <strong>Ждем вашего звонка</strong>
-                        </span-->
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="cabinet">
-                        <div class="cabinet-img"></div>
+        <div class="row-menu">
+            <div class="header-info">
+                <div class="header-nav">
+                    <div class="burger_menu"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                    <nav class="nav">
+                        <ul class="list-unstyled-none">
+                            <li><a href="/oplata">Оплата</a></li>
+                            <li><a href="/delivery">Доставка</a></li>
+                            <li><a href="/garanty-service">Гарантия и сервис</a></li>
+                            <li><a href="/about_us">О нас</a></li>
+                            <li><a href="/contact-us">Контакты</a></li>
+                            <li><a href="/articles">Cтатьи</a></li>
+                            <li><a href="/vse-uslugi">Услуги</a></li>
+                            <li><a href="/index.php?route=gallery/gallery&path=">Наши работы</a></li>
+                        </ul>
+                        <div class="cabinet_menu">
+                            <div class="cabinet-img"></div>
                             <?php if (!$logged) { ?>
                             <a href="<?php echo $register; ?>"><?php echo $text_register; ?></a>
                             <a href="/my-account/" title="Авторизация">Авторизация</a>
@@ -102,14 +85,37 @@
                             <a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>"><?php echo $text_account; ?></a>
                             <a href="/logout/" title="Выход">Выход</a>
                             <?php } ?>
-                    </div>
+                        </div>
+                    </nav>
+                    <?php  $language; ?>
                 </div>
             </div>
-
+            <div class="phone_avtoriz">
+                <div class="us-phone">
+                    <div class="phone-img"></div>
+                    <div class="us-phone-number">
+                        <p><?php echo $telephone; ?></p>
+                    </div>
+                    <!--<span class="slogan">
+                        <strong>Ждем вашего звонка</strong>
+                    </span>-->
+                </div>
+                <div class="cabinet">
+                    <div class="cabinet-img"></div>
+                        <?php if (!$logged) { ?>
+                        <a href="<?php echo $register; ?>"><?php echo $text_register; ?></a>
+                        <a href="/my-account/" title="Авторизация">Авторизация</a>
+                        <?php } else { ?>
+                        <a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>"><?php echo $text_account; ?></a>
+                        <a href="/logout/" title="Выход">Выход</a>
+                        <?php } ?>
+                </div>
+            </div>
         </div>
+
     </div>
 </div>
-
+<!---->
 <div class="bottom-menu">
     <div class="row" style="max-width: 1127px; margin: auto;">
         <div class="col-sm-4">
@@ -176,12 +182,18 @@
         <div class="col-sm-5 text-center align-middle" style="padding-top: 11px; padding-bottom: 11px;"><?php echo $search; ?></div>
         <div class="col-sm-3 text-center"><?php echo $cart; ?></div>
     </div>
-    <div id="fon-cat" class="fon">
-
+    <div id="fon-cat" class="fon text-center">
+        <div id="content" class="col-xs-12 text-center"></div>
     </div>
 </div>
-<div>
-    <div id="content" class="col-sm-12">
 
-    </div>
-</div>
+<script type="text/javascript">
+    $('.burger_menu').click(function() {
+        $(".nav").slideToggle(300);
+    });
+    $(window).resize(function() {
+        if($(window).width() > 920) {
+            $('.nav').removeAttr('style');
+        }
+    });
+</script>

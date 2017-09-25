@@ -1,46 +1,379 @@
 <?php echo $header; ?>
-<?php /*
-<div class="container">
-  <div class="row"><?php echo $column_left; ?>
-    <?php if ($column_left && $column_right) { ?>
-    <?php $class = 'col-sm-6'; ?>
-    <?php } elseif ($column_left || $column_right) { ?>
-    <?php $class = 'col-sm-9'; ?>
-    <?php } else { ?>
-    <?php $class = 'col-sm-12'; ?>
-    <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?><?php echo $content_bottom; ?></div>
-    <?php echo $column_right; ?></div>
-</div>
-*/ ?>
-<div class="container baner">
-  <div class="baner-img">
-    <img src="/catalog/view/theme/midasstone/images/baner-1.jpg" alt="Наши услуги"/>
-    <a href="/catalog-tovarov/dekorativnye-rasteniya/" class="item1">Декоративные и плодовые растения</a>
-    <a href="/catalog-tovarov/sistemy-avtomaticheskogo-poliva/" class="item2">Системи автоматичного поливу</a>
-    <a href="/catalog-tovarov/prirodniy-kamn/" class="item3">Природний камінь</a>
-    <a href="#" class="item4">Садовий інструмент</a>
-    <a href="#" class="item5">Рулонний газон</a>
-  </div>
-  
-  <div class="baner-img">
-    <img src="image/catalog/slider/avtopoliv_b.jpg" alt="Наши услуги автополив"/>
-  </div>
-  <div class="baner-img">
-    <img src="image/catalog/slider/gazon_b.jpg" alt="Наши услуги газон"/>
-  </div>
-  <div class="baner-img">
-    <img src="image/catalog/slider/stou_b.jpg" alt="Наши услуги"/>
-  </div>
 
-</div>
-<div class="page-body">
-  <?php if(isset($custom) && !empty($custom)){
-  		$category = '';
-    	foreach($custom as $cat) $category .= $cat; 
-    	echo $category;
-  }?>
-  <div class="services">
+<div class="wrap">
+    <div class="home-slider">
+        <div class="home-slide"><img src="/catalog/view/theme/midasstone/images/baner-1.jpg" alt="Наши услуги"/></div>
+        <!--slid-->
+        <div class="home-slide"><img src="image/catalog/slider/avtopoliv_b.jpg" alt="Наши услуги автополив"/></div>
+        <!--slid-->
+        <div class="home-slide"><img src="image/catalog/slider/gazon_b.jpg" alt="Наши услуги газон"/></div>
+        <!--slid-->
+        <div class="home-slide"><img src="image/catalog/slider/stou_b.jpg" alt="Наши услуги"/></div>
+        <!--slid-->
+    </div>
+    <!---->
+    <div class="conteiner-home">
+        <!---->
+        <div class="category-home">
+            <div class="category-head">
+                <h1>Природный камень</h1>
+            </div>
+
+            <div class="conteiner-category">
+                <!---->
+                <div class="category-sitebar">
+                    <ul>
+                        <li><a href="#">Брусчатка</a></li>
+                        <li><a href="#">Бутовый камень</a></li>
+                        <li><a href="#">Камень пластовий облицювальний</a></li>
+                        <li><a href="#">Ландшафтний камінь</a></li>
+                        <li><a href="#">Мраморная галька</a></li>
+                        <li><a href="#">Мраморная крошка</a></li>
+                        <li><a href="#">Плитка из камня</a></li>
+                        <li><a href="#">Плитка из камня лапша</a></li>
+                        <li><a href="#">Стеклянные камни</a></li>
+                    </ul>
+                </div>
+                <!---->
+                <div class="category-inner-slider">
+                    <div class="category-slider">
+                        <!--slid-->
+                        <div class="category-slid">
+                            <div class="categ-slid-img">
+                                <img src="http://midaswork/image/cache/catalog/1-min-280x200.jpg" alt="img">
+                            </div>
+                            <div class="categ-slid-cont">
+                                <a href="#">Вращающаяся регулируемая форсунка RAIN BIRD RN-13-18F</a>
+                                <h3>2700грн</h3>
+                                <p>В наличии</p>
+                                <button>Купить</button>
+                            </div>
+                        </div>
+                        <!--slid-->
+                        <div class="category-slid">
+                            <div class="categ-slid-img">
+                                <img src="http://midaswork/image/cache/catalog/1-min-280x200.jpg" alt="img">
+                            </div>
+                            <div class="categ-slid-cont">
+                                <a href="#">Вращающаяся регулируемая форсунка RAIN BIRD RN-13-18F</a>
+                                <h3>2700грн</h3>
+                                <p>В наличии</p>
+                                <button>Купить</button>
+                            </div>
+                        </div>
+                        <!--slid-->
+                        <div class="category-slid">
+                            <div class="categ-slid-img">
+                                <img src="http://midaswork/image/cache/catalog/1-min-280x200.jpg" alt="img">
+                            </div>
+                            <div class="categ-slid-cont">
+                                <a href="#">Вращающаяся регулируемая форсунка RAIN BIRD RN-13-18F</a>
+                                <h3>2700грн</h3>
+                                <p>В наличии</p>
+                                <button>Купить</button>
+                            </div>
+                        </div>
+                        <!--slid-->
+                        <div class="category-slid">
+                            <div class="categ-slid-img">
+                                <img src="http://midaswork/image/cache/catalog/1-min-280x200.jpg" alt="img">
+                            </div>
+                            <div class="categ-slid-cont">
+                                <a href="#">Вращающаяся регулируемая форсунка RAIN BIRD RN-13-18F</a>
+                                <h3>2700грн</h3>
+                                <p>В наличии</p>
+                                <button>Купить</button>
+                            </div>
+                        </div>
+                        <!--slid-->
+                        <div class="category-slid">
+                            <div class="categ-slid-img">
+                                <img src="http://midaswork/image/cache/catalog/1-min-280x200.jpg" alt="img">
+                            </div>
+                            <div class="categ-slid-cont">
+                                <a href="#">Вращающаяся регулируемая форсунка RAIN BIRD RN-13-18F</a>
+                                <h3>2700грн</h3>
+                                <p>В наличии</p>
+                                <button>Купить</button>
+                            </div>
+                        </div>
+                        <!--slid-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--content-home-->
+        <div class="category-home">
+            <div class="category-head">
+                <h1>Природный камень</h1>
+            </div>
+
+            <div class="conteiner-category">
+                <!---->
+                <div class="category-sitebar">
+                    <ul>
+                        <li><a href="#">Брусчатка</a></li>
+                        <li><a href="#">Бутовый камень</a></li>
+                        <li><a href="#">Камень пластовий облицювальний</a></li>
+                        <li><a href="#">Ландшафтний камінь</a></li>
+                        <li><a href="#">Мраморная галька</a></li>
+                        <li><a href="#">Мраморная крошка</a></li>
+                        <li><a href="#">Плитка из камня</a></li>
+                        <li><a href="#">Плитка из камня лапша</a></li>
+                        <li><a href="#">Стеклянные камни</a></li>
+                    </ul>
+                </div>
+                <!---->
+                <div class="category-inner-slider">
+                    <div class="category-slider">
+                        <!--slid-->
+                        <div class="category-slid">
+                            <div class="categ-slid-img">
+                                <img src="http://midaswork/image/cache/catalog/1-min-280x200.jpg" alt="img">
+                            </div>
+                            <div class="categ-slid-cont">
+                                <a href="#">Вращающаяся регулируемая форсунка RAIN BIRD RN-13-18F</a>
+                                <h3>2700грн</h3>
+                                <p>В наличии</p>
+                                <button>Купить</button>
+                            </div>
+                        </div>
+                        <!--slid-->
+                        <div class="category-slid">
+                            <div class="categ-slid-img">
+                                <img src="http://midaswork/image/cache/catalog/1-min-280x200.jpg" alt="img">
+                            </div>
+                            <div class="categ-slid-cont">
+                                <a href="#">Вращающаяся регулируемая форсунка RAIN BIRD RN-13-18F</a>
+                                <h3>2700грн</h3>
+                                <p>В наличии</p>
+                                <button>Купить</button>
+                            </div>
+                        </div>
+                        <!--slid-->
+                        <div class="category-slid">
+                            <div class="categ-slid-img">
+                                <img src="http://midaswork/image/cache/catalog/1-min-280x200.jpg" alt="img">
+                            </div>
+                            <div class="categ-slid-cont">
+                                <a href="#">Вращающаяся регулируемая форсунка RAIN BIRD RN-13-18F</a>
+                                <h3>2700грн</h3>
+                                <p>В наличии</p>
+                                <button>Купить</button>
+                            </div>
+                        </div>
+                        <!--slid-->
+                        <div class="category-slid">
+                            <div class="categ-slid-img">
+                                <img src="http://midaswork/image/cache/catalog/1-min-280x200.jpg" alt="img">
+                            </div>
+                            <div class="categ-slid-cont">
+                                <a href="#">Вращающаяся регулируемая форсунка RAIN BIRD RN-13-18F</a>
+                                <h3>2700грн</h3>
+                                <p>В наличии</p>
+                                <button>Купить</button>
+                            </div>
+                        </div>
+                        <!--slid-->
+                        <div class="category-slid">
+                            <div class="categ-slid-img">
+                                <img src="http://midaswork/image/cache/catalog/1-min-280x200.jpg" alt="img">
+                            </div>
+                            <div class="categ-slid-cont">
+                                <a href="#">Вращающаяся регулируемая форсунка RAIN BIRD RN-13-18F</a>
+                                <h3>2700грн</h3>
+                                <p>В наличии</p>
+                                <button>Купить</button>
+                            </div>
+                        </div>
+                        <!--slid-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--content-home-->
+        <div class="category-home">
+            <div class="category-head">
+                <h1>Природный камень</h1>
+            </div>
+
+            <div class="conteiner-category">
+                <!---->
+                <div class="category-sitebar">
+                    <ul>
+                        <li><a href="#">Брусчатка</a></li>
+                        <li><a href="#">Бутовый камень</a></li>
+                        <li><a href="#">Камень пластовий облицювальний</a></li>
+                        <li><a href="#">Ландшафтний камінь</a></li>
+                        <li><a href="#">Мраморная галька</a></li>
+                        <li><a href="#">Мраморная крошка</a></li>
+                        <li><a href="#">Плитка из камня</a></li>
+                        <li><a href="#">Плитка из камня лапша</a></li>
+                        <li><a href="#">Стеклянные камни</a></li>
+                    </ul>
+                </div>
+                <!---->
+                <div class="category-inner-slider">
+                    <div class="category-slider">
+                        <!--slid-->
+                        <div class="category-slid">
+                            <div class="categ-slid-img">
+                                <img src="http://midaswork/image/cache/catalog/1-min-280x200.jpg" alt="img">
+                            </div>
+                            <div class="categ-slid-cont">
+                                <a href="#">Вращающаяся регулируемая форсунка RAIN BIRD RN-13-18F</a>
+                                <h3>2700грн</h3>
+                                <p>В наличии</p>
+                                <button>Купить</button>
+                            </div>
+                        </div>
+                        <!--slid-->
+                        <div class="category-slid">
+                            <div class="categ-slid-img">
+                                <img src="http://midaswork/image/cache/catalog/1-min-280x200.jpg" alt="img">
+                            </div>
+                            <div class="categ-slid-cont">
+                                <a href="#">Вращающаяся регулируемая форсунка RAIN BIRD RN-13-18F</a>
+                                <h3>2700грн</h3>
+                                <p>В наличии</p>
+                                <button>Купить</button>
+                            </div>
+                        </div>
+                        <!--slid-->
+                        <div class="category-slid">
+                            <div class="categ-slid-img">
+                                <img src="http://midaswork/image/cache/catalog/1-min-280x200.jpg" alt="img">
+                            </div>
+                            <div class="categ-slid-cont">
+                                <a href="#">Вращающаяся регулируемая форсунка RAIN BIRD RN-13-18F</a>
+                                <h3>2700грн</h3>
+                                <p>В наличии</p>
+                                <button>Купить</button>
+                            </div>
+                        </div>
+                        <!--slid-->
+                        <div class="category-slid">
+                            <div class="categ-slid-img">
+                                <img src="http://midaswork/image/cache/catalog/1-min-280x200.jpg" alt="img">
+                            </div>
+                            <div class="categ-slid-cont">
+                                <a href="#">Вращающаяся регулируемая форсунка RAIN BIRD RN-13-18F</a>
+                                <h3>2700грн</h3>
+                                <p>В наличии</p>
+                                <button>Купить</button>
+                            </div>
+                        </div>
+                        <!--slid-->
+                        <div class="category-slid">
+                            <div class="categ-slid-img">
+                                <img src="http://midaswork/image/cache/catalog/1-min-280x200.jpg" alt="img">
+                            </div>
+                            <div class="categ-slid-cont">
+                                <a href="#">Вращающаяся регулируемая форсунка RAIN BIRD RN-13-18F</a>
+                                <h3>2700грн</h3>
+                                <p>В наличии</p>
+                                <button>Купить</button>
+                            </div>
+                        </div>
+                        <!--slid-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--content-home-->
+        <div class="category-home">
+            <div class="category-head">
+                <h1>Природный камень</h1>
+            </div>
+
+            <div class="conteiner-category">
+                <!---->
+                <div class="category-sitebar">
+                    <ul>
+                        <li><a href="#">Брусчатка</a></li>
+                        <li><a href="#">Бутовый камень</a></li>
+                        <li><a href="#">Камень пластовий облицювальний</a></li>
+                        <li><a href="#">Ландшафтний камінь</a></li>
+                        <li><a href="#">Мраморная галька</a></li>
+                        <li><a href="#">Мраморная крошка</a></li>
+                        <li><a href="#">Плитка из камня</a></li>
+                        <li><a href="#">Плитка из камня лапша</a></li>
+                        <li><a href="#">Стеклянные камни</a></li>
+                    </ul>
+                </div>
+                <!---->
+                <div class="category-inner-slider">
+                    <div class="category-slider">
+                        <!--slid-->
+                        <div class="category-slid">
+                            <div class="categ-slid-img">
+                                <img src="http://midaswork/image/cache/catalog/1-min-280x200.jpg" alt="img">
+                            </div>
+                            <div class="categ-slid-cont">
+                                <a href="#">Вращающаяся регулируемая форсунка RAIN BIRD RN-13-18F</a>
+                                <h3>2700грн</h3>
+                                <p>В наличии</p>
+                                <button>Купить</button>
+                            </div>
+                        </div>
+                        <!--slid-->
+                        <div class="category-slid">
+                            <div class="categ-slid-img">
+                                <img src="http://midaswork/image/cache/catalog/1-min-280x200.jpg" alt="img">
+                            </div>
+                            <div class="categ-slid-cont">
+                                <a href="#">Вращающаяся регулируемая форсунка RAIN BIRD RN-13-18F</a>
+                                <h3>2700грн</h3>
+                                <p>В наличии</p>
+                                <button>Купить</button>
+                            </div>
+                        </div>
+                        <!--slid-->
+                        <div class="category-slid">
+                            <div class="categ-slid-img">
+                                <img src="http://midaswork/image/cache/catalog/1-min-280x200.jpg" alt="img">
+                            </div>
+                            <div class="categ-slid-cont">
+                                <a href="#">Вращающаяся регулируемая форсунка RAIN BIRD RN-13-18F</a>
+                                <h3>2700грн</h3>
+                                <p>В наличии</p>
+                                <button>Купить</button>
+                            </div>
+                        </div>
+                        <!--slid-->
+                        <div class="category-slid">
+                            <div class="categ-slid-img">
+                                <img src="http://midaswork/image/cache/catalog/1-min-280x200.jpg" alt="img">
+                            </div>
+                            <div class="categ-slid-cont">
+                                <a href="#">Вращающаяся регулируемая форсунка RAIN BIRD RN-13-18F</a>
+                                <h3>2700грн</h3>
+                                <p>В наличии</p>
+                                <button>Купить</button>
+                            </div>
+                        </div>
+                        <!--slid-->
+                        <div class="category-slid">
+                            <div class="categ-slid-img">
+                                <img src="http://midaswork/image/cache/catalog/1-min-280x200.jpg" alt="img">
+                            </div>
+                            <div class="categ-slid-cont">
+                                <a href="#">Вращающаяся регулируемая форсунка RAIN BIRD RN-13-18F</a>
+                                <h3>2700грн</h3>
+                                <p>В наличии</p>
+                                <button>Купить</button>
+                            </div>
+                        </div>
+                        <!--slid-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--content-home-->
+    </div>
+    <!---->
+
+    <div class="services">
     <h2>Предоставляем услуги:</h2>
 
     <div class="us-services">
@@ -91,4 +424,40 @@
   </div>
 </div>
 <?php endif; ?>
+
+    <!---->
+</div>
+
+<script type="text/javascript" src="catalog/view/theme/midasstone/scripts/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="catalog/view/theme/midasstone/scripts/js/slick/slick.min.js"></script>
+<script type="text/javascript">
+    $(".home-slider").slick({
+        autoplay: true,
+        autoplaySpeed: 4000,
+        adaptiveHeight: true,
+        arrows: false
+    });
+    /*-----slider-category-----*/
+    $(".category-slider").slick({
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        autoplay: true,
+        arrows: false,
+
+        responsive: [
+          {
+            breakpoint: 970,
+            settings: {
+                slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 580,
+            settings: {
+                slidesToShow: 2
+            }
+          }
+      ]
+    });
+</script>
 <?php echo $footer; ?>

@@ -1,5 +1,5 @@
-<div class="product-grid index-grid-<?php echo $index_slider?>">
-    <div class="featured-products">
+<!--<div class="product-grid index-grid-<?php echo $index_slider?>">
+   <div class="featured-products">
         <div class="header-product">
             <h2 class="title"><?php echo $category_1[0]['name'] ?></h2>
             <div class="nav-slide">
@@ -90,4 +90,4 @@
             $slider2.slick("slickNext");
         });
     });
-</script>
+</script>-->
