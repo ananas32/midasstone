@@ -1,47 +1,51 @@
 <?php echo $header; ?>
+<style>
+    .slid_slick {
+        margin: auto;
+        padding: 7px 50px 7px 50px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        background-color: #336633;
+        color: #fff;
+        margin-bottom: 15px;
+        transition: 0.5s;
+    }
+    .slid_slick:hover{
+        text-decoration: none;
+        color: white;
+    }
+</style>
 <div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php } ?>
-  </ul>
-  <div class="row"><?php echo $column_left; ?>
-    <?php if ($column_left && $column_right) { ?>
-    <?php $class = 'col-sm-6'; ?>
-    <?php } elseif ($column_left || $column_right) { ?>
-    <?php $class = 'col-sm-9'; ?>
-    <?php } else { ?>
-    <?php $class = 'col-sm-12'; ?>
-    <?php } ?>
-    <div class="container" style="padding: 0;">
-  		<div class="">
-        <?php echo $content_top; ?>
-      <h1><?php //echo $name; ?>Cтатьи</h1>
-      <?php if ($articles) { ?>
-        <div class="article-catalog-bloc">
-            <?php foreach ($articles as $article) { ?>
-            <div class="article-catalog-holder" style="padding-bottom: 20px; margin-bottom: 20px">
-                <div class="article-catalog-img" style="padding: 25px 0 0 25px;">
+    <ul class="breadcrumb">
+        <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+            <li>
+                <a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
+            </li>
+        <?php } ?>
+    </ul>
+    <h1>Cтатьи</h1>
+    <?php if ($articles) { ?>
+        <?php foreach ($articles as $article) { ?>
+            <div class="row" style="background: #fff; padding: 20px; border-radius: 2px;">
+                <div class="col-sm-4">
                     <img class="img-responsive img-thumbnail pull-right" src="<?php echo $article['image']; ?>" alt="">
                 </div>
-                <div class="article-catalog-text">
+                <div class="col-sm-8">
                     <h3 class="text-center"><?php echo $article['name']; ?></h3>
                     <div class="text-justify" style="text-indent: 1.5em;">
                         <?php echo $article['intro_text']; ?>
                     </div>
-                    <div class="article-catalog-button">
-                    <a href="<?php echo $article['href']; ?>">Читать полностью</a>
-                  </div>
+                    <div>
+                        <a class="slid_slick" href="<?php echo $article['href']; ?>">Читать полностью</a>
+                    </div>
                 </div>
-          </div>
+            </div>
+            <hr>
         <?php } ?>
-	</div>
-      <?php } ?>
-      <?php if (!$articles) { ?>
-      <p><?php echo $text_empty; ?></p>
-      <?php } ?>
-      <?php echo $content_bottom; ?></div>
-    <?php echo $column_right; ?></div>
-</div>
+    <?php } else { ?>
+        <p><?php echo $text_empty; ?></p>
+    <?php } ?>
+    <?php echo $column_right; ?>
 </div>
 <?php echo $footer; ?>
