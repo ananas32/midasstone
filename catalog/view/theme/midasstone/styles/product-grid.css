@@ -1,7 +1,4 @@
 /*-----------new styles--------*/
-a {
-  /*display: block;*/
-}
 /*-----top opis-----*/
 .opis_cont {
   margin-top: 20px;
@@ -45,10 +42,10 @@ a {
   margin-bottom: 8px;
 }
 .sitbar > ul > li > a {
-  /*color: #000;*/
-  /*position: relative;*/
-  /*line-height: 17px;*/
-  /*transition: 0.5s;*/
+  color: #000;
+  position: relative;
+  line-height: 17px;
+  transition: 0.5s;
 }
 .sitbar > ul > li > a:hover {
   text-decoration: none;
@@ -56,6 +53,7 @@ a {
 }
 .sitbar > ul > li > a:after {
   content: '';
+  display: block;
   width: 0%;
   height: 1px;
   background-color: #2E5C5C;
@@ -85,8 +83,8 @@ a {
   width: 100%;
 }
 .slid_slick > a {
-  /*margin-left: 15px;*/
-  /*margin-top: 5px;*/
+  margin-left: 15px;
+  margin-top: 5px;
 }
 .slid_slick > h1 {
   margin-left: 15px;
