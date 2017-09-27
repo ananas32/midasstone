@@ -16,7 +16,7 @@
         color: white;
     }
 </style>
-<div class="container">
+<div class="container" style="max-width: 1050px">
     <ul class="breadcrumb">
         <?php foreach ($breadcrumbs as $breadcrumb) { ?>
             <li>
@@ -27,7 +27,7 @@
     <h1>Cтатьи</h1>
     <?php if ($articles) { ?>
         <?php foreach ($articles as $article) { ?>
-            <div class="row" style="background: #fff; padding: 20px; border-radius: 2px;">
+            <div class="row" style="background: #fff; padding: 20px; border-radius: 2px; max-width: 1050px; margin: auto">
                 <div class="col-sm-4">
                     <img class="img-responsive img-thumbnail pull-right" src="<?php echo $article['image']; ?>" alt="">
                 </div>
