@@ -1,5 +1,5 @@
 <?php echo $header; ?>
-<div class="header-catalog"><div class="container"><h1><?php echo $heading_title; ?></h1></div></div>
+<!--<div class="header-catalog"><div class="container"><h1><?php echo $heading_title; ?></h1></div></div>
 <div class="page-body">
   <div class="product-grid-catedoriya">
     <?php if($categories && $products){ ?>
@@ -89,7 +89,7 @@
     </div>
               </div>
             </div>
-           
+
     <?php }else{?>
       <div class="no-result-product"><p><?php echo $text_empty; ?></p>
       <div class="buttons">
@@ -97,5 +97,138 @@
       </div></div>
     <?php } ?>
   </div>
+</div>-->
+
+<div class="wrap tovar-cont">
+    <div class="tovar-sitebar-conteiner">
+        <div class="category-sitebar">
+            <ul class="tovar-sitebar">
+                <li><a href="#">Бут гранітний</a></li>
+                <li><a href="#">Галька</a></li>
+                <li><a href="#">Галька природня</a></li>
+                <li><a href="#">Галька ракушняк</a></li>
+                <li><a href="#">Декоративна отсипка</a></li>
+                <li><a href="#">Камінь лісовий</a></li>
+                <li><a href="#">Мармур бутовий</a></li>
+                <li><a href="#">Риф морський</a></li>
+            </ul>
+        </div>
+        <div class="tovar-slider">
+            <div class="tovar-slid"><img src="image/catalog/slider/avtopoliv_b.jpg" alt="img"></div>
+            <div class="tovar-slid"><img src="image/catalog/slider/avtopoliv_b.jpg" alt="img"></div>
+            <div class="tovar-slid"><img src="image/catalog/slider/avtopoliv_b.jpg" alt="img"></div>
+        </div>
+    </div>
+    <!---->
+    <div class="tovar-head">
+        <h1>Роторные оросители большой дальности</h1>
+    </div>
+    <!---->
+    <div class="tovar_conteiner">
+        <!--tovar-->
+        <div class="tovar">
+            <div class="tovar-img">
+                <img src="http://midasstone.com.ua/image/cache/catalog/ed9c7f78f5a87c20e38b5a9bfb368e70-280x200.jpg" alt="img">
+            </div>
+            <div class="tovar-content">
+                <a href="#">Rain Bird 212822</a>
+                <h3>2500 грн</h3>
+                <p>В наличии</p>
+                <button>Купить</button>
+            </div>
+        </div>
+        <!--tovar-->
+        <div class="tovar">
+            <div class="tovar-img">
+                <img src="http://midasstone.com.ua/image/cache/catalog/ed9c7f78f5a87c20e38b5a9bfb368e70-280x200.jpg" alt="img">
+            </div>
+            <div class="tovar-content">
+                <a href="#">Rain Bird 212822</a>
+                <h3>2500 грн</h3>
+                <p>В наличии</p>
+                <button>Купить</button>
+            </div>
+        </div>
+        <!--tovar-->
+        <div class="tovar">
+            <div class="tovar-img">
+                <img src="http://midasstone.com.ua/image/cache/catalog/ed9c7f78f5a87c20e38b5a9bfb368e70-280x200.jpg" alt="img">
+            </div>
+            <div class="tovar-content">
+                <a href="#">Rain Bird 212822</a>
+                <h3>2500 грн</h3>
+                <p>В наличии</p>
+                <button>Купить</button>
+            </div>
+        </div>
+        <!--tovar-->
+        <div class="tovar">
+            <div class="tovar-img">
+                <img src="http://midasstone.com.ua/image/cache/catalog/ed9c7f78f5a87c20e38b5a9bfb368e70-280x200.jpg" alt="img">
+            </div>
+            <div class="tovar-content">
+                <a href="#">Rain Bird 212822</a>
+                <h3>2500 грн</h3>
+                <p>В наличии</p>
+                <button>Купить</button>
+            </div>
+        </div>
+        <!--tovar-->
+        <div class="tovar">
+            <div class="tovar-img">
+                <img src="http://midasstone.com.ua/image/cache/catalog/ed9c7f78f5a87c20e38b5a9bfb368e70-280x200.jpg" alt="img">
+            </div>
+            <div class="tovar-content">
+                <a href="#">Rain Bird 212822</a>
+                <h3>2500 грн</h3>
+                <p>В наличии</p>
+                <button>Купить</button>
+            </div>
+        </div>
+        <!--tovar-->
+        <div class="tovar">
+            <div class="tovar-img">
+                <img src="http://midasstone.com.ua/image/cache/catalog/ed9c7f78f5a87c20e38b5a9bfb368e70-280x200.jpg" alt="img">
+            </div>
+            <div class="tovar-content">
+                <a href="#">Rain Bird 212822</a>
+                <h3>2500 грн</h3>
+                <p>В наличии</p>
+                <button>Купить</button>
+            </div>
+        </div>
+        <!--tovar-->
+    </div>
+    <!---->
 </div>
+<script type="text/javascript" src="catalog/view/theme/midasstone/scripts/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="catalog/view/theme/midasstone/scripts/js/slick/slick.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var tovarWidth = $(".tovar").eq(0).innerWidth(),
+            tovarCount = $(".tovar").length;
+        for(var i = 1; i <= tovarCount; i++) {
+            $(".tovar").eq(i).css({
+                'max-width': tovarWidth
+            });
+        }
+        /*----*/
+        $(window).resize(function() {
+            var tovarWidth = $(".tovar").eq(0).innerWidth(),
+                tovarCount = $(".tovar").length;
+            for(var i = 1; i <= tovarCount; i++) {
+                $(".tovar").eq(i).css({
+                    'max-width': tovarWidth
+                });
+            }
+        });
+        /*slider*/
+        $(".tovar-slider").slick({
+            autoplay: true,
+            autoplaySpeed: 2000,
+            adaptiveHeight: true,
+            arrows: false
+        });
+    });
+</script>
 <?php echo $footer; ?>
