@@ -38,7 +38,7 @@
     $start = $total - 12;
     ?>
     <?php for($i=$start; $i<=$total; $i += 4){ ?>
-    <div style="padding: 10px; margin-top: 5px;">
+    <div style="padding: 10px; margin-top: 5px; max-width: 1050px; margin: auto">
         <div class="row">
             <div class="col-sm-3 bg">
                 <div class="product-image clearfix">
