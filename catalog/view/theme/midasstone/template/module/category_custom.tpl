@@ -1,6 +1,6 @@
 <div class="category-home">
     <div class="category-head">
-        <a href="<?=$category_1[1]['href']?>"><h1><?=$category_1[0]['name']?></h1></a>
+        <a href="<?=$category_1[0]['category_href']?>"><h1><?=$category_1[0]['name']?></h1></a>
     </div>
 
     <div class="conteiner-category">

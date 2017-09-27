@@ -37,6 +37,23 @@ class ControllerCommonHome extends Controller
         $data['index_slider'] = 77;
         $data['custom'][] = $this->load->view($this->config->get('config_template') . '/template/module/category_custom.tpl', $data);
 
+        ///
+        $data['category_1'] = $this->get_category_info(80);
+        $data['index_slider'] = 80;
+        $data['custom'][] = $this->load->view($this->config->get('config_template') . '/template/module/category_custom.tpl', $data);
+
+        $data['category_1'] = $this->get_category_info(129);
+        $data['index_slider'] = 129;
+        $data['custom'][] = $this->load->view($this->config->get('config_template') . '/template/module/category_custom.tpl', $data);
+
+        $data['category_1'] = $this->get_category_info(104);
+        $data['index_slider'] = 104;
+        $data['custom'][] = $this->load->view($this->config->get('config_template') . '/template/module/category_custom.tpl', $data);
+
+        $data['category_1'] = $this->get_category_info(118);
+        $data['index_slider'] = 118;
+        $data['custom'][] = $this->load->view($this->config->get('config_template') . '/template/module/category_custom.tpl', $data);
+
         if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/home.tpl')) {
             $this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/common/home.tpl', $data));
         } else {
@@ -63,6 +80,7 @@ class ControllerCommonHome extends Controller
         $data['categories'][] = array(
             'category_id' => $category_p['category_id'],
             'name' => $category_p['name'],
+            'category_href' => $this->url->link('product/category', 'path=' . $category_id),
             'children' => $children_data,
             'column' => $category_p['column'] ? $category_p['column'] : 1,
             'products' => $this->getProductCategor(array('filter_category_id' => $category_id, 'start' => 0, 'limit' => 10), ''),
