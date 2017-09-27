@@ -154,6 +154,7 @@
 
             <?php } ?>
             <div class="col-sm-12 text-center"><?php echo $pagination; ?></div>
+
         </div>
 
         <!---->
