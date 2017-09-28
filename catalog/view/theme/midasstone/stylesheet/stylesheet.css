@@ -158,7 +158,6 @@ a.text-danger:focus {
 .no-product>p{font-size:20px;padding:20px 0;}
 .no-product{text-align:center;padding-top:30px;padding-bottom:50px;    min-height: 40vh;}
 .pagination-class{
-	    min-width: 1127px;
     margin: 0 auto;
 }
 .pagination-class .pagination .active span{
