@@ -1,4 +1,12 @@
 <?php echo $header; ?>
+<div class="container" style="max-width: 1050px">
+    <ul class="breadcrumb">
+        <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+        <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
+        <?php } ?>
+    </ul>
+    <h1><?=$heading_title;?></h1>
+</div>
 <!--<div class="page-body">
   <div class="breadcrumb"></div>
   <div id="product" class="product-detail">
@@ -387,72 +395,71 @@
         </div>
     </div>
 
-    <div class="product-slider">
-        <div class="product-head-slider">
-            <h2>Похожые запросы:</h2>
+    <?php if($products){ ?>
+        <div class="product-slider">
+            <div class="product-head-slider">
+                <h2>Похожие запросы:</h2>
+            </div>
+            <div class="product-conteiner-slick">
+                <?php foreach($products as $product){  ?>
+                    <div class="product-slid">
+                        <div class="product-slid-img">
+                            <a href="<?php echo $product['href'] ?>">
+                                <img src="<?php echo $product['thumb'] ?>" alt="<?php echo $product['name'] ?>" />
+                            </a>
+                        </div>
+                        <div class="product-slid-text">
+                            <a href="<?php echo $product['href'] ?>"><?php echo $product['name'] ?></a>
+                            <h3><?php echo $product['price'] ?></h3>
+                            <p><?php echo $product['stock_status'] ?></p>
+                            <button type="submit" onclick="cart.add(<?php echo $product['product_id']?>)">Купить</button>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
         </div>
-        <div class="product-conteiner-slick">
-            <div class="product-slid">
-                <div class="product-slid-img">
-                   <a href="#"><img src="http://midasstone.com.ua/image/cache/catalog/products/decor_flower/armeria-280x200.jpg" alt="img"></a>
-                </div>
-                <div class="product-slid-text">
-                    <a href="#">Доронікум</a>
-                    <h3>Цену уточняйте</h3>
-                    <p>В наличии</p>
-                    <button type="submit">Купить</button>
-                </div>
+    <?php } ?>
+
+    <div class="services">
+        <h2>Предоставляем услуги:</h2>
+
+        <div class="us-services">
+            <div class="bloc-services">
+                <ul class="list-unstyled">
+                    <li>Проектные работы</li>
+                    <li>Ландшафтный дизайн</li>
+                    <li>Мощение брусчатки</li>
+                    <li>Облицовочные работы</li>
+                </ul>
             </div>
-            <!--slid-->
-            <div class="product-slid">
-                <div class="product-slid-img">
-                   <a href="#"><img src="http://midasstone.com.ua/image/cache/catalog/products/decor_flower/armeria-280x200.jpg" alt="img"></a>
-                </div>
-                <div class="product-slid-text">
-                    <a href="#">Доронікум</a>
-                    <h3>Цену уточняйте</h3>
-                    <p>В наличии</p>
-                    <button type="submit">Купить</button>
-                </div>
+            <div class="bloc-services">
+                <ul class="list-unstyled">
+                    <li>Утепление фасадов</li>
+                    <li>Бетонные работы</li>
+                    <li>Демонтаж</li>
+                    <li>Малярные работы</li>
+                    <li>Вывоз мусора</li>
+                </ul>
             </div>
-            <!--slid-->
-            <div class="product-slid">
-                <div class="product-slid-img">
-                   <a href="#"><img src="http://midasstone.com.ua/image/cache/catalog/products/decor_flower/armeria-280x200.jpg" alt="img"></a>
-                </div>
-                <div class="product-slid-text">
-                    <a href="#">Доронікум</a>
-                    <h3>Цену уточняйте</h3>
-                    <p>В наличии</p>
-                    <button type="submit">Купить</button>
-                </div>
+            <div class="bloc-services">
+                <ul class="list-unstyled">
+                    <li>Аква-гидротехнические монтажные работы</li>
+                    <li>Подготовительные работы</li>
+                    <li>Монтаж искусственных покрытий</li>
+                    <li>Обслуживание</li>
+                </ul>
             </div>
-            <!--slid-->
-            <div class="product-slid">
-                <div class="product-slid-img">
-                   <a href="#"><img src="http://midasstone.com.ua/image/cache/catalog/products/decor_flower/armeria-280x200.jpg" alt="img"></a>
-                </div>
-                <div class="product-slid-text">
-                    <a href="#">Доронікум</a>
-                    <h3>Цену уточняйте</h3>
-                    <p>В наличии</p>
-                    <button type="submit">Купить</button>
-                </div>
+            <div class="bloc-services">
+                <ul class="list-unstyled">
+                    <li>Строительство и монтаж ландшафтно-хозяйственных сооружений</li>
+                    <li>Благоустройство</li>
+                </ul>
             </div>
-            <!--slid-->
-            <div class="product-slid">
-                <div class="product-slid-img">
-                   <a href="#"><img src="http://midasstone.com.ua/image/cache/catalog/products/decor_flower/armeria-280x200.jpg" alt="img"></a>
-                </div>
-                <div class="product-slid-text">
-                    <a href="#">Доронікум</a>
-                    <h3>Цену уточняйте</h3>
-                    <p>В наличии</p>
-                    <button type="submit">Купить</button>
-                </div>
-            </div>
-            <!--slid-->
         </div>
+        <div class="services-button">
+            <a href="vse-uslugi">Все услуги</a>
+        </div>
+        <div class="s-block"></div>
     </div>
 </div>
 
