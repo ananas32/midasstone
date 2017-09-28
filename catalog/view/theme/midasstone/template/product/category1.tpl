@@ -1,7 +1,14 @@
 <?php echo $header; ?>
-<?=$heading_title;?>
+<div class="container" style="max-width: 1050px">
+	<ul class="breadcrumb">
+		<?php foreach ($breadcrumbs as $breadcrumb) { ?>
+		<li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
+		<?php } ?>
+	</ul>
+	<h1><?=$heading_title;?></h1>
+</div>
+<div class="cont container" style="max-width: 1050px">
 
-<div class="cont container">
 	<div class="conten">
 		<?php if(!empty($category_image) && !empty($category_description)){ ?>
 		<div class="row opis_cont">
