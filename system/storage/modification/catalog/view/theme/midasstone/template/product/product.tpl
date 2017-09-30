@@ -7,7 +7,7 @@
     </ul>
     <h1><?=$heading_title;?></h1>
 </div>
-<!--<div class="page-body">
+<!--div class="page-body">
   <div class="breadcrumb"></div>
   <div id="product" class="product-detail">
     <h2><?php echo $heading_title; ?></h2>
@@ -284,7 +284,7 @@
 </div>
 <div class="s-block"></div>
 
-<script type="text/javascript"><!--
+<script type="text/javascript">
     $('#button-oneclick').on('click', function() {
         $.ajax({
             url: 'index.php?route=checkout/one_click/add',
@@ -334,31 +334,57 @@
 		}
 	});
 });
-</script>-->
+</script -->
 
 <div class="inner-product-wrap">
     <div class="product-wrap">
         <div class="product-img">
-            <img src="http://midasstone.com.ua/image/cache/catalog/product/Многофункциональные фонтанные насосы/Ashampoo_Snap_2017.06.13_19h53m23s_002_-280x200.png" alt="img">
+            <?php if ($thumb || $images) { ?>
+                <?php if ($thumb) { ?>
+                <div class="product-image clearfix">
+                    <a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>">
+                        <img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="product-image" />
+                    </a>
+                </div>
+                <?php } ?>
+                <?php if ($images) { ?>
+                    <div class="some-product">
+                        <?php foreach ($images as $image) { ?>
+                        <a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>">
+                            <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>"
+                                 alt="<?php echo $heading_title; ?>" /></a>
+                        <?php } ?>
+                    </div>
+                <?php } ?>
+            <?php } ?>
         </div>
         <div class="product-conteiner">
             <div class="product-head">
-                <h1>Фонтанный насос MULTI-1300i-1,5-3P</h1>
+                <h1><?=$heading_title;?></h1>
             </div>
 
             <div class="product-details">
                 <div class="sale-one-click">
-                    <h2>RNRI03F</h2>
+                    <h2><?php echo $sku;?></h2>
                     <p>Купить в 1 клик:</p>
-                    <div class="form-product">
-                        <input type="text" name="phone" placeholder="Номер телефона">
-                        <button type="submit"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                    <div id="oneclick" class="one-click" >
+                        <div class="input-group form-product">
+                            <input type="text" name="telephone" value="" placeholder="<?php echo $text_one_click_placeholder; ?>" id="input-payment-telephone">
+                            <input type="hidden" name="product_id" value="<?php echo $product_id; ?>">
+                            <button type="submit" id="button-oneclick"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+                        </div>
                     </div>
                 </div>
                 <div class="sale">
                     <h4>В наличии</h4>
-                    <h3>1 014.00грн.</h3>
-                    <button>В корзину</button>
+                    <h3>
+                        <?php if($price == 'Цену уточняйте'): ?>
+                            <?php echo $price; ?>
+                        <?php else: ?>
+                            <?php echo $price; ?>
+                        <?php endif; ?>
+                    </h3>
+                    <button onclick="cart.add(<?php echo $product_id; ?>)">В корзину</button>
                 </div>
             </div>
             
@@ -371,10 +397,7 @@
 
             <div class="product-text">
                 <h2>Описание:</h2>
-                <p>Серия MULTI, Внутренняя установка, кабель 1,5 м, вилка Tripolar EU Schuko 
-                MULTI 1300 PUMP 1200л/ч - H 170см 230-240V 50Hz EU 3P 1,5м
-                MULTI-1300i-1,5-3P - полностью погружной насос, приводимый в движение синхронным двигателем с постоянным магнитом.</p>
-                <p>Благодаря использованию взаимозаменяемого губчатого фильтра, MULTI-1300i-1,5-3P также позволяет регулировать поток воздуха до 1200 л / ч.</p>
+                <p><?php echo $description; ?></p>
             </div>
 
             <div class="product-details2">
@@ -463,9 +486,49 @@
     </div>
 </div>
 
-<script type="text/javascript" src="catalog/view/theme/midasstone/scripts/js/jquery-3.1.1.min.js"></script>
-<script type="text/javascript" src="catalog/view/theme/midasstone/scripts/js/slick/slick.min.js"></script>
+<!--script type="text/javascript" src="catalog/view/theme/midasstone/scripts/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="catalog/view/theme/midasstone/scripts/js/slick/slick.min.js"></script -->
 <script type="text/javascript">
+    $('#button-oneclick').on('click', function() {
+        $.ajax({
+            url: 'index.php?route=checkout/one_click/add',
+            type: 'post',
+            data: $('#oneclick input[type=\'text\'], #oneclick input[type=\'hidden\']'),
+            dataType: 'json',
+            success: function(json) {
+                $('.alert, .text-danger').remove();
+                $('.form-group').removeClass('has-error');
+
+                if (json['error']) {
+                    if (json['error']['telephone']) {
+                        $('#input-payment-telephone').addClass('error');
+                    }
+                    if (json['error']['product']) {
+                        $('.breadcrumb').after('<div class="alert alert-danger text-danger">' + json['error']['product'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                    }
+                    if (json['error']['order']) {
+                        $('.breadcrumb').after('<div class="alert alert-danger text-danger">' + json['error']['order'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+                        $('html, body').animate({ scrollTop: 0 }, 'slow');
+                    }
+                }
+
+                if (json['success']) {
+                    $('#input-payment-telephone').removeClass('error');
+                    $('#input-payment-telephone').val('');
+                    $.magnificPopup.open({
+                        items: {
+                            src: '<div class="white-popup"><h3>Дякуємо за ваше замовлення!</h3><p>Наш менеджер звяжеться з Вами в найближчий час.</p></div>',
+                            type: 'inline'
+                        }
+                    });
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+            }
+        });
+    });
     $(".product-conteiner-slick").slick({
         autoplay: true,
         autoplaySpeed: 2000,
@@ -487,6 +550,15 @@
             slidesToShow: 2          }
         }
       ]
+    });
+    $(document).ready(function() {
+        $('.product-image').magnificPopup({
+            type:'image',
+            delegate: 'a',
+            gallery: {
+                enabled:true
+            }
+        });
     });
 </script>
 
