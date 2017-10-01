@@ -138,6 +138,9 @@ h2 > a, h1 > a {
   text-align: center;
   font-size: 18px;
 }
+.slid_slick_img > a > img {
+  width: 100%;
+}
 /*-----media-----*/
 @media screen and (max-width: 767px) {
   .contein_conten > h2 {
