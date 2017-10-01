@@ -7,9 +7,9 @@
             <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
             <?php } ?>
         </ul>
+        <h1>Каталог товаров</h1>
     </div>
     <div class="catalog">
-        <h1>Каталог товаров</h1>
         <div class="content">
 
             <?php if ($categories) { ?>

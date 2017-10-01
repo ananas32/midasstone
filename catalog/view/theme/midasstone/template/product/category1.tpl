@@ -40,8 +40,8 @@
 					<?php foreach ($categories as $k => $category) { ?>
 						<?php if(!empty($category['children'])){ ?>
 							<div class="featured-products">
-								<div class="contein_conten"><!--******************************************-->
-									<a href="#"><?php echo $category['name']?></a>
+								<div class="contein_conten">
+									<a href="<?php echo $category['href']?>"><?php echo $category['name']?></a>
 								</div>
 								<div class="featured-holder">
 									<div class="slider_slick">
