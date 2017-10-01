@@ -36,14 +36,16 @@
                              title="<?php echo $product['name']; ?>"/>
                 </td>
                 <td>
+                    <a href="<?php echo $product['href']; ?>">
                     <?php echo $product['name']; ?>
+                    </a>
                 </td>
                 <td>
                     <div class="product-price"><p><?php echo $product['price']; ?>&nbsp<span></span></p></div>
                 </td>
                 <td>
                     <div class="number">
-                        1
+                        <?php echo $product['quantity']; ?>
                         <!-- input type="text" value="1" size="5"/>
                         <span class="minus"></span>
                         <span class="plus"></span -->

@@ -1,137 +1,115 @@
 <?php echo $header; ?>
+<div class="container" style="max-width: 1050px">
+  <ul class="breadcrumb">
+    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
+    <?php } ?>
+  </ul>
+  <h1><?=$heading_title;?></h1>
+</div>
+
+
+
+<div class="wrap tovar-cont">
+  <br>
+  <div class="tovar-head">
+  </div>
+  <?php if($categories && $products){ ?>
+  <h3><?php echo $text_category; ?></h3>
+  <?php foreach ($categories as $category) echo '<li><a href="'.$category['href'].'">'.$category['name'].'</a></li>'; ?>
+  <?php foreach ($productCategory as $k => $category) { ?>
+  <p><?php echo $category['pName']?></p>
+  <?php foreach( $category['products'] as $child ){ ?>
+  <img src="<?php echo $child['thumb'] ?>" alt="<?php echo $child['name'] ?>"/>
+  <?php if($child['sku']){ ?> <div class="art">Арт. <?php echo $child['sku'] ?> </div> <?php } ?>
+  <div class="product-category"><a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></div>
+  <?php if($child['price'] == 'Цену уточняйте'): ?>
+  <div class="product-no-price"><?php echo $child['price']; ?></div>
+  <?php else: ?>
+  <div class="product-price"><p><?php echo $child['price']; ?></p></div>
+  <?php endif; ?>
+  <div class="available"><?php echo $child['stock_status']; ?></div>
+  <button type="submit"  onclick="cart.add(<?php echo $child['product_id']?>)" class="btnsubmit">Купить</button>
+  <?php } ?>
+  <?php } ?>
+  <?php }elseif($products){ ?>
+  <!---->
+  <div class="tovar_conteiner">
+    <?php foreach($products as $child ){ ?>
+    <!--tovar-->
+    <div class="tovar">
+      <div class="tovar-img">
+        <img src="<?php echo $child['thumb'] ?>" alt="<?php echo $child['name'] ?>"/>
+      </div>
+      <div class="tovar-content">
+        <a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a>
+        <h3>
+          <?php if($child['price'] == 'Цену уточняйте'): ?>
+          <?php echo $child['price']; ?>
+          <?php else: ?>
+          <?php echo $child['price']; ?>
+          <?php endif; ?>
+        </h3>
+        <p><?php echo $child['stock_status']; ?></p>
+        <button type="submit" onclick="cart.add(<?php echo $child['product_id']?>)">Купить</button>
+      </div>
+    </div>
+
+    <?php } ?>
+    <div class="col-sm-12 text-center pagination-class"><?php echo $pagination; ?></div>
+
+  </div>
+
+  <!---->
+  <?php }else{ ?>
+  <div class="no-result-product"><p><?php echo $text_empty; ?></p>
+    <div class="buttons">
+      <div class="pull-right"><a href="<?php echo $continue; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <?php } ?>
+</div>
+
+<script type="text/javascript" src="catalog/view/theme/midasstone/scripts/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="catalog/view/theme/midasstone/scripts/js/slick/slick.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var tovarWidth = $(".tovar").eq(0).innerWidth(),
+            tovarCount = $(".tovar").length;
+        for(var i = 1; i <= tovarCount; i++) {
+            $(".tovar").eq(i).css({
+                'max-width': tovarWidth
+            });
+        }
+      /*----*/
+        $(window).resize(function() {
+            var tovarWidth = $(".tovar").eq(0).innerWidth(),
+                tovarCount = $(".tovar").length;
+            for(var i = 1; i <= tovarCount; i++) {
+                $(".tovar").eq(i).css({
+                    'max-width': tovarWidth
+                });
+            }
+        });
+      /*slider*/
+        $(".tovar-slider").slick({
+            autoplay: true,
+            autoplaySpeed: 2000,
+            adaptiveHeight: true,
+            arrows: false
+        });
+    });
+</script>
+
+<?php /*
 <div class="header-catalog"><div class="container"><h1><?php echo $heading_title; ?></h1></div></div>
 <div class="page-body lojgougf">
   <div class="filtr product-grid-catedoriya">
     <div class="featured-product-menu">
       <h3> Категорії</h3>
       <?php echo $column_left; ?>
-      <?php /*
-      <div class="price-filter-bloc">
-        <h2>Ціна</h2>
-
-        <div class="wrapper">
-          <div id="slider-range">
-            <p>
-              <input type="text" id="minCost" value="0"/><span class="val">грн</span>
-              <input type="text" id="maxCost" value="1000"/><span class="val1" >грн</span>
-            </p>
-          </div>
-          <div class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-slider-handle ui-corner-all"
-               id="slider">
-            <a style="left: 0%;" class="ui-slider-handle ui-state-default ui-corner-all" href="#"></a>
-            <a style="right: 0%;" class="ui-slider-handle ui-state-default ui-corner-all" href="#"></a>
-          </div>
-        </div>
-      </div>
-      <div class="brend">
-        <h2>Бренд</h2>
-
-        <div class="checkboxes">
-          <form action="#" method="post" class="customForm">
-            <div class="check">
-              Плитка з каменю лапша
-              <input type="checkbox" value="cat1"/>
-            </div>
-            <div class="check">
-              Плитка із каменю з тесаними краями
-              <input type="checkbox" value="cat2"/>
-            </div>
-            <div class="check">
-              Плитка камінь - “Руст”
-              <input type="checkbox" value="cat3"/>
-            </div>
-            <div class="check">
-              Піщаник
-              <input type="checkbox" value="cat4"/>
-            </div>
-            <div class="check">
-              Вапняк
-              <input type="checkbox" value="cat5"/>
-            </div>
-            <div class="check">
-              Травертин
-              <input type="checkbox" value="cat6"/>
-            </div>
-            <div class="check">
-              Інший камінь
-              <input type="checkbox" value="cat7"/>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class="features">
-        <h2>Особливості</h2>
-
-        <div class="checkboxes">
-          <form action="#" method="post" class="customForm">
-            <div class="check">
-              Плитка з каменю лапша
-              <input type="checkbox" value="cat1"/>
-            </div>
-            <div class="check">
-              Плитка із каменю з тесаними краями
-              <input type="checkbox" value="cat2"/>
-            </div>
-            <div class="check">
-              Плитка камінь - “Руст”
-              <input type="checkbox" value="cat3"/>
-            </div>
-            <div class="check">
-              Піщаник
-              <input type="checkbox" value="cat4"/>
-            </div>
-            <div class="check">
-              Вапняк
-              <input type="checkbox" value="cat5"/>
-            </div>
-            <div class="check">
-              Травертин
-              <input type="checkbox" value="cat6"/>
-            </div>
-            <div class="check">
-              Інший камінь
-              <input type="checkbox" value="cat7"/>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class="technology">
-        <h2>Технології</h2>
-
-        <div class="checkboxes">
-          <form action="#" method="post" class="customForm">
-            <div class="check">
-              Плитка з каменю лапша
-              <input type="checkbox" value="cat1"/>
-            </div>
-            <div class="check">
-              Плитка із каменю з тесаними краями
-              <input type="checkbox" value="cat2"/>
-            </div>
-            <div class="check">
-              Плитка камінь - “Руст”
-              <input type="checkbox" value="cat3"/>
-            </div>
-            <div class="check">
-              Піщаник
-              <input type="checkbox" value="cat4"/>
-            </div>
-            <div class="check">
-              Вапняк
-              <input type="checkbox" value="cat5"/>
-            </div>
-            <div class="check">
-              Травертин
-              <input type="checkbox" value="cat6"/>
-            </div>
-            <div class="check">
-              Інший камінь
-              <input type="checkbox" value="cat7"/>
-            </div>
-          </form>
-        </div>
-      </div>
-    */ ?>
     </div>
     <div class="featured-product-bloc">
       <?php if($products){ ?>
@@ -180,7 +158,7 @@
     </div>
   </div>
 </div>
-
+/*>
 <?php /*
 
 <div class="container">

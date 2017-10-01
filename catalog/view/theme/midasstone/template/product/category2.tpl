@@ -153,7 +153,7 @@
                 </div>
 
             <?php } ?>
-            <div class="col-sm-12 text-center"><?php echo $pagination; ?></div>
+            <div class="col-sm-12 text-center pagination-class"><?php echo $pagination; ?></div>
 
         </div>
 
