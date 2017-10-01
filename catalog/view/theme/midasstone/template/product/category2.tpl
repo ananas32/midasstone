@@ -112,23 +112,53 @@
     <div class="tovar-head">
     </div>
     <?php if($categories && $products){ ?>
-        <h3><?php echo $text_category; ?></h3>
-        <?php foreach ($categories as $category) echo '<li><a href="'.$category['href'].'">'.$category['name'].'</a></li>'; ?>
-        <?php foreach ($productCategory as $k => $category) { ?>
-        <p><?php echo $category['pName']?></p>
-        <?php foreach( $category['products'] as $child ){ ?>
-        <img src="<?php echo $child['thumb'] ?>" alt="<?php echo $child['name'] ?>"/>
-        <?php if($child['sku']){ ?> <div class="art">Арт. <?php echo $child['sku'] ?> </div> <?php } ?>
-        <div class="product-category"><a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></div>
-        <?php if($child['price'] == 'Цену уточняйте'): ?>
-        <div class="product-no-price"><?php echo $child['price']; ?></div>
-        <?php else: ?>
-        <div class="product-price"><p><?php echo $child['price']; ?></p></div>
-        <?php endif; ?>
-        <div class="available"><?php echo $child['stock_status']; ?></div>
-        <button type="submit"  onclick="cart.add(<?php echo $child['product_id']?>)" class="btnsubmit">Купить</button>
-        <?php } ?>
-        <?php } ?>
+        <div class="conten">
+            <div class="row">
+                <div class="hidden-xs col-sm-3">
+                    <h3><?php $text_category; ?>Подкатегории:</h3>
+                    <div class="sitbar">
+                        <ul>
+                            <?php
+							foreach ($categories as $category){
+								echo '<li><a href="'.$category['href'].'">'.$category['name'].'</a></li>';
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                    <!--sitebar-->
+                </div>
+                <div class="col-xs-12 col-sm-9">
+                    <!-- old-->
+                    <?php foreach ($categories as $k => $category) { ?>
+                    <?php if(!empty($category['product_cat'])){ ?>
+                    <div class="contein_conten">
+                        <h2><a href="<?=$category['href']?>"><?=$category['name']?></a></h2>
+                        <div class="slider_slick">
+                            <?php foreach( $category['product_cat'] as $child ){ ?>
+                            <div class="slid_slick">
+                                <div class="slid_slick_img">
+                                    <img src="<?=$child['thumb']?>" alt="<?=$child['name']?>">
+                                </div>
+                                <a href="<?=$child['href']?>"><?=$child['name']?></a>
+                                <h1>
+                                    <?php if($child['price'] == 'Цену уточняйте'): ?>
+                                    <?php echo $child['price']; ?>
+                                    <?php else: ?>
+                                    <?php echo $child['price']; ?>
+                                    <?php endif; ?>
+                                </h1>
+                                <p><?=$child['stock_status']?></p>
+                                <button type="submit" onclick="cart.add(<?= $child['product_id']?>)">Купить</button>
+                            </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <?php } ?>
+                    <?php } ?>
+                    <!-- end old -->
+                </div>
+            </div>
+        </div>
     <?php }elseif($products){ ?>
         <!---->
         <div class="tovar_conteiner">
@@ -154,7 +184,6 @@
 
             <?php } ?>
             <div class="col-sm-12 text-center pagination-class"><?php echo $pagination; ?></div>
-
         </div>
 
         <!---->
@@ -170,31 +199,31 @@
 <script type="text/javascript" src="catalog/view/theme/midasstone/scripts/js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="catalog/view/theme/midasstone/scripts/js/slick/slick.min.js"></script>
 <script type="text/javascript">
-    $(document).ready(function() {
-        var tovarWidth = $(".tovar").eq(0).innerWidth(),
-            tovarCount = $(".tovar").length;
-        for(var i = 1; i <= tovarCount; i++) {
-            $(".tovar").eq(i).css({
-                'max-width': tovarWidth
-            });
-        }
-        /*----*/
-        $(window).resize(function() {
-            var tovarWidth = $(".tovar").eq(0).innerWidth(),
-                tovarCount = $(".tovar").length;
-            for(var i = 1; i <= tovarCount; i++) {
-                $(".tovar").eq(i).css({
-                    'max-width': tovarWidth
-                });
+    $('.slider_slick').slick({
+        аccessibility: false,
+        arrows: false,
+        dots: true,
+        infinite: true,
+        adaptiveHeight: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
+
+        responsive: [
+            {
+                breakpoint: 970,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 580,
+                settings: {
+                    slidesToShow: 2
+                }
             }
-        });
-        /*slider*/
-        $(".tovar-slider").slick({
-            autoplay: true,
-            autoplaySpeed: 2000,
-            adaptiveHeight: true,
-            arrows: false
-        });
+        ]
     });
 </script>
 <?php echo $footer; ?>
