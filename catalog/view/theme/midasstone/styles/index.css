@@ -1,3 +1,7 @@
+.list-unstyled-none a {
+  color: #000;
+  margin-right: 25px;
+}
 /*.header {
   display: flex;
   justify-content: space-between;
@@ -51,7 +55,7 @@
   display: flex;
   justify-content: space-between;
 }
-.nav {  
+.nav {
   border-bottom: 1px solid #666666;
   margin-bottom: 10px;
   text-align: center;
@@ -62,10 +66,6 @@
 
 .nav li {
   display: inline-block;
-}
-
-.nav li+li {
-  margin-right: 25px;
 }
 
 
@@ -210,19 +210,12 @@
   }
   .list-unstyled-none a {
     display: block;
-    color: #fff;
+    color: #000;
     font-size: 16px;
     margin-bottom: 10px;
   }
   .list-unstyled-none a:first-child {
     margin-top: 10px;
-  }
-  .nav li + li {
-    margin-right: 10px;
-  }
-  .nav li {
-    margin-right: 10px;
-    margin-left: 10px;
   }
   /*cabinet avtorization*/
   .cabinet_menu {
@@ -254,7 +247,7 @@
   .us-phone-number p {
     font-size: 23px;
   }
-  
+
 }
 @media (max-width: 797px) {
   .header-contact {
