@@ -1,11 +1,11 @@
 <?php echo $header; ?>
 <div class="container">
-  
+
   <div class="row">
 	  <div class="col-xs-12">
 				<div class="content-in">
 					<div class="row">
-					
+
 	<?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
@@ -15,7 +15,7 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>">
-	
+
 		<ul class="breadcrumb">
 			<?php foreach ($breadcrumbs as $breadcrumb) { ?>
 			<li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
@@ -54,4 +54,4 @@
     <?php echo $column_right; ?></div>
 	</div></div></div>
 </div>
-<?php echo $footer; ?> 
+<?php echo $footer; ?>

@@ -8,8 +8,6 @@
   <h1><?=$heading_title;?></h1>
 </div>
 
-
-
 <div class="wrap tovar-cont">
   <br>
   <div class="tovar-head">
@@ -39,7 +37,9 @@
     <!--tovar-->
     <div class="tovar">
       <div class="tovar-img">
-        <img src="<?php echo $child['thumb'] ?>" alt="<?php echo $child['name'] ?>"/>
+        <a href="<?php echo $child['href']; ?>">
+          <img src="<?php echo $child['thumb'] ?>" alt="<?php echo $child['name'] ?>"/>
+        </a>
       </div>
       <div class="tovar-content">
         <a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a>

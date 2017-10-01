@@ -65,7 +65,9 @@
 									<?php foreach( $category['product_cat'] as $child ){ ?>
 										<div class="slid_slick">
 											<div class="slid_slick_img">
-												<img src="<?=$child['thumb']?>" alt="<?=$child['name']?>">
+												<a href="<?=$child['href']?>">
+													<img src="<?=$child['thumb']?>" alt="<?=$child['name']?>">
+												</a>
 											</div>
 											<a href="<?=$child['href']?>"><?=$child['name']?></a>
 											<h1>

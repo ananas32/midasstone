@@ -137,7 +137,9 @@
                             <?php foreach( $category['product_cat'] as $child ){ ?>
                             <div class="slid_slick">
                                 <div class="slid_slick_img">
-                                    <img src="<?=$child['thumb']?>" alt="<?=$child['name']?>">
+                                    <a href="<?=$child['href']?>">
+                                        <img src="<?=$child['thumb']?>" alt="<?=$child['name']?>">
+                                    </a>
                                 </div>
                                 <a href="<?=$child['href']?>"><?=$child['name']?></a>
                                 <h1>
@@ -166,7 +168,9 @@
                 <!--tovar-->
                 <div class="tovar">
                     <div class="tovar-img">
-                        <img src="<?php echo $child['thumb'] ?>" alt="<?php echo $child['name'] ?>"/>
+                        <a href="<?php echo $child['href']; ?>">
+                            <img src="<?php echo $child['thumb'] ?>" alt="<?php echo $child['name'] ?>"/>
+                        </a>
                     </div>
                     <div class="tovar-content">
                         <a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a>

@@ -18,7 +18,9 @@
                 <?php foreach($category_1[0]['products'] as $product){ ?>
                 <div class="category-slid">
                     <div class="categ-slid-img">
-                        <img src="<?=$product['thumb']?>" alt="<?=$product['name']?>">
+                        <a href="<?php echo $product['href']?>">
+                            <img src="<?=$product['thumb']?>" alt="<?=$product['name']?>">
+                        </a>
                     </div>
                     <div class="categ-slid-cont">
                         <?php echo $product['sku']?>
