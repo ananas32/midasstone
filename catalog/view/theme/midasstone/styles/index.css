@@ -2,6 +2,9 @@
   color: #000;
   margin-right: 25px;
 }
+.list-unstyled a {
+  margin-right: 25px;
+}
 /*.header {
   display: flex;
   justify-content: space-between;
