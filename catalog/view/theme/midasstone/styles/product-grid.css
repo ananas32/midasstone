@@ -1,5 +1,5 @@
 /*-----------new styles--------*/
-h2 > a {
+h2 > a, h1 > a {
   color: #000;
 }
 /*-----top opis-----*/
@@ -82,7 +82,7 @@ h2 > a {
 .slid_slick_img {
   width: 100%;
 }
-.slid_slick_img > img {
+.slid_slick_img > a > img {
   width: 100%;
 }
 .slid_slick > a {
@@ -219,7 +219,7 @@ h2 > a {
 .categ-slid-img {
   width: 100%;
 }
-.categ-slid-img > img {
+.categ-slid-img > a > img {
   width: 100%;
 }
 /**/
@@ -296,7 +296,7 @@ h2 > a {
 .tovar-img {
   width: 100%;
 }
-.tovar-img > img {
+.tovar-img > a > img {
   width: 100%;
 }
 /**/
