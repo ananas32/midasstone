@@ -1,4 +1,7 @@
 /*-----------new styles--------*/
+h2 > a {
+  color: #000;
+}
 /*-----top opis-----*/
 .opis_cont {
   margin-top: 20px;
@@ -116,6 +119,25 @@
   background-color: #274F27;
 }
 /*slick button*/
+.contein_conten > a {
+  display: block;
+  color: #000;
+  font-size: 24px;
+  margin-bottom: -25px;
+}
+.featured-products-list {
+  border-left: 1px solid #F1F1F1;
+  border-top: 1px solid #F1F1F1;
+  border-bottom: 1px solid #F1F1F1;
+}
+.product-category-header > a {
+  display: block;
+  color: #000;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 18px;
+}
 /*-----media-----*/
 @media screen and (max-width: 767px) {
   .contein_conten > h2 {
@@ -125,7 +147,6 @@
 /*-------home page-------
 -------------------------
 -----------------------*/
-
 /*---home-slider---*/
 .wrap {
   max-width: 1050px;
