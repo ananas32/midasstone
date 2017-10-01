@@ -211,6 +211,9 @@
     justify-content: center;
     margin-right: 40px;
   }
+  .list-unstyled-none > li >  a {
+    color: #fff;
+  }
   .list-unstyled-none a {
     display: block;
     color: #000;
