@@ -40,20 +40,16 @@
 					<?php foreach ($categories as $k => $category) { ?>
 						<?php if(!empty($category['children'])){ ?>
 							<div class="featured-products">
-								<div class="header-product">
-									<p><?php echo $category['name']?></p>
-									<div class="nav-slide">
-										<div class="prew"><a href="#" class="prew-b<?php echo $k?$k:''; ?>"> < </a></div>
-										<div class="next"><a href="#" class="next-b<?php echo $k?$k:''; ?>"> > </a></div>
-									</div>
+								<div class="contein_conten"><!--******************************************-->
+									<a href="#"><?php echo $category['name']?></a>
 								</div>
 								<div class="featured-holder">
-									<div class="product-slider<?php echo $k?$k:''; ?> clearfix">
+									<div class="slider_slick">
 										<?php foreach( $category['children'] as $child ){ ?>
 										<div class="featured-products-list">
 											<div class="featured-product">
 												<div class="product-category-header"><a href="<?php echo $child['href'] ?>"><?php echo $child['name'] ?></a></div>
-												<div class="product-category-img">
+												<div class="slid_slick_img">
 													<img src="<?php echo $child['image'] ?>" alt="<?php echo $child['name'] ?>"/>
 												</div>
 											</div>
@@ -111,7 +107,7 @@
   	  infinite: true,
   	  adaptiveHeight: true,
 	  slidesToShow: 4,
-	  slidesToScroll: 1,
+	  slidesToScroll: 4,
 	  autoplay: true,
 	  autoplaySpeed: 4000,
 
