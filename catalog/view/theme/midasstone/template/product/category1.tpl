@@ -50,7 +50,7 @@
 											<div class="featured-product">
 												<div class="product-category-header"><a href="<?php echo $child['href'] ?>"><?php echo $child['name'] ?></a></div>
 												<div class="slid_slick_img">
-													<img src="<?php echo $child['image'] ?>" alt="<?php echo $child['name'] ?>"/>
+													<img src="<?php echo $child['image'] ?>" style="max-width: 200px" alt="<?php echo $child['name'] ?>"/>
 												</div>
 											</div>
 										</div>

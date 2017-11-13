@@ -283,19 +283,19 @@ $(function () {
 });
 
 
-$("#accordion > li > div").click(function () {
+// $("#accordion > li > div").click(function () {
+//
+//   if (false == $(this).next().is(':visible')) {
+//     $('#accordion ul').slideUp(280);
+//   }
+//   $(this).next().slideToggle(280);
+// });
 
-  if (false == $(this).next().is(':visible')) {
-    $('#accordion ul').slideUp(280);
-  }
-  $(this).next().slideToggle(280);
-});
 
-
-$('#menu_pop').click(function () {
-  $("#fon-cat").css("display", "block;");
-  $("#popup-kat").css("display", "block;")
-});
+// $('#menu_pop').click(function () {
+//   $("#fon-cat").css("display", "block;");
+//   $("#popup-kat").css("display", "block;")
+// });
 
 $('#fon-cat').click(function () {
   $('#fon-cat').css("display", "none;");

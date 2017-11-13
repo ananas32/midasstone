@@ -163,9 +163,9 @@ $(document).ready(function () {
     $slider4.slick("slickNext");
   });
 });
-$('#bloc').on('click',function(){
-	$('.close-poup-catalog').trigger('click');
-});
+// $('#bloc').on('click',function(){
+// 	$('.close-poup-catalog').trigger('click');
+// });
 /*slide4*/
 $(document).ready(function () {
   var $slider5 = $(".product-slider3");
@@ -251,7 +251,7 @@ $(function () {
 });
 
 
-$("#accordion > li > div").click(function () {
+$("#bloc > div > ul > li > div").on('mouseover',function () {
 
   if (false == $(this).next().is(':visible')) {
     $('#accordion ul').slideUp(280);
@@ -259,19 +259,30 @@ $("#accordion > li > div").click(function () {
   $(this).next().slideToggle(280);
 });
 
-
-$('#menu_pop').click(function () {
-  $("#fon-cat").css("display", "block;");
-  $("#popup-kat").css("display", "block;")
+$('#fon-cat').on('click', function() {
+    $('.popup-katalog').attr('style', 'display: none');
+    $('#fon-cat').css("display", "none;");
+    $('#popup-kat').css("display", "none;");
+    $('#accordion ul').css("display", "none;");
+    $('.menuLvl1').attr('style', 'display: none');
+    $('.close-poup-catalog').trigger('click');
 });
+// <div class="close-poup-catalog" onclick="document.getElementById('popup-kat6').style.display = 'none',
+// document.getElementById('fon-cat').style.display = 'none',
+//     document.getElementById('accordion > ul').style.display = 'none'"></div>
 
-$('#fon-cat').click(function () {
-  $('#fon-cat').css("display", "none;");
-  $('#popup-kat').css("display", "none;");
-  $('#accordion ul').css("display", "none;");
-	$('.close-poup-catalog').trigger('click');
-  
-});
+// $('#menu_pop').click(function () {
+//   $("#fon-cat").css("display", "block;");
+//   $("#popup-kat").css("display", "block;")
+// });
+
+// $('#fon-cat').click(function () {
+//   $('#fon-cat').css("display", "none;");
+//   $('#popup-kat').css("display", "none;");
+//   $('#accordion ul').css("display", "none;");
+// 	$('.close-poup-catalog').trigger('click');
+//
+// });
 
 /* slider product-grid*/
 
