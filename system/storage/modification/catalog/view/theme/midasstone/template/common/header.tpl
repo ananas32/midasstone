@@ -123,7 +123,7 @@
                 <div id="menu_pop">
                     <ul id="accordion">
                         <li>
-                            <div class="first">Каталог товаров <span class="line-menu"></span></div>
+                            <div class="first"><a href="/catalog-tovarov">Каталог товаров</a> <span class="line-menu"></span></div>
                             <ul class="menuLvl1" style=""
                                 onmouseover="document.getElementById('fon-cat').style.display='block';">
                                 <?php foreach ($categories as $category) { ?>
@@ -182,8 +182,8 @@
         <div class="col-sm-5 text-center align-middle" style="padding-top: 11px; padding-bottom: 11px;"><?php echo $search; ?></div>
         <div class="col-sm-3 text-center"><?php echo $cart; ?></div>
     </div>
-    <div id="fon-cat" class="fon text-center">
-        <div id="content" class="col-xs-12 text-center"></div>
+    <div id="fon-cat" class="fon text-center" style="width: 100%;">
+        <div id="content" style="width: 1050px;"></div>
     </div>
 </div>
 
