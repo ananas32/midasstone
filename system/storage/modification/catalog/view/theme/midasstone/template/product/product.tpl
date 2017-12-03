@@ -378,16 +378,21 @@
                 <div class="sale">
                     <h4>В наличии</h4>
                     <h3>
-                        <?php if($price == 'Цену уточняйте'): ?>
-                            <?php echo $price; ?>
-                        <?php else: ?>
-                            <?php echo $price; ?>
-                        <?php endif; ?>
+                        <?php if (!$special) { ?>
+                            <?php if($price == 'Цену уточняйте'): ?>
+                                <?php echo $price; ?>
+                            <?php else: ?>
+                                <?php echo $price; ?>
+                            <?php endif; ?>
+                        <?php } else { ?>
+                            <s><?php echo $price; ?></s> / <?php echo $special; ?>
+                        <?php } ?>
                     </h3>
+
                     <button onclick="cart.add(<?php echo $product_id; ?>)">В корзину</button>
                 </div>
             </div>
-            
+
             <div class="yslov">
                 <form action="#" method="post">
                     <input type="checkbox" value="ok" checked="checked">

@@ -71,11 +71,15 @@
 											</div>
 											<a href="<?=$child['href']?>"><?=$child['name']?></a>
 											<h1>
-												<?php if($child['price'] == 'Цену уточняйте'): ?>
-												<?php echo $child['price']; ?>
-												<?php else: ?>
-												<?php echo $child['price']; ?>
-												<?php endif; ?>
+												<?php if (!$child['special']) { ?>
+													<?php if($child['price'] == 'Цену уточняйте'): ?>
+														<?php echo $child['price']; ?>
+													<?php else: ?>
+														<?php echo $child['price']; ?>
+													<?php endif; ?>
+												<?php } else { ?>
+													<s><?php echo $child['price']; ?></s> / <br><?php echo $child['special']; ?>
+												<?php } ?>
 											</h1>
 											<p><?=$child['stock_status']?></p>
 											<button type="submit" onclick="cart.add(<?= $child['product_id']?>)">Купить</button>
